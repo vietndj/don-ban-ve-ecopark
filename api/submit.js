@@ -11,9 +11,8 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "2050406425";
 
 // Google Sheets API - Service Account
 const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL || "form-feedback-offline@vietndj-git-cms.iam.gserviceaccount.com";
-const GOOGLE_PRIVATE_KEY = (process.env.GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, '\n');
-const GOOGLE_SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || "1J9ZrjLxTba9R-wuet1n_J_hKcL0PVtQDD_ag65Ewx04";
-const GOOGLE_SHEET_NAME = process.env.GOOGLE_SHEET_NAME || "Offline Ecopark 19-20/09";
+const GOOGLE_SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || "1KiRikBLzoZTin14c14-kZiZfXotp2JEZnYKWFcDtFhw";
+const GOOGLE_SHEET_NAME = process.env.GOOGLE_SHEET_NAME || "Danh Sách Học Viên";
 
 // GitHub Persistent Storage (Optional backup)
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
@@ -81,8 +80,8 @@ async function appendToGoogleSheet(item) {
 async function dispatchToTelegram(item) {
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
   try {
-    const sheetUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/edit#gid=1966522143`;
-    const excelDownloadUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/export?format=xlsx&gid=1966522143`;
+    const sheetUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/edit`;
+    const excelDownloadUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/export?format=xlsx`;
     
     const text =
       `🏡 <b>HỌC VIÊN ĐĂNG KÝ VỀ ECOPARK (19-20/09)!</b>\n` +
