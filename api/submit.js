@@ -81,7 +81,8 @@ async function appendToGoogleSheet(item) {
 async function dispatchToTelegram(item) {
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
   try {
-    const sheetUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/edit`;
+    const sheetUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/edit#gid=1966522143`;
+    const excelDownloadUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/export?format=xlsx&gid=1966522143`;
     
     const text =
       `🏡 <b>HỌC VIÊN ĐĂNG KÝ VỀ ECOPARK (19-20/09)!</b>\n` +
@@ -93,10 +94,10 @@ async function dispatchToTelegram(item) {
       `⏰ <b>Check-in:</b> ${item.checkinTime || 'Chưa chọn'}\n` +
       `🍖 <b>Bữa tối thân mật (19/09):</b> ${item.dinner || 'Tự túc'}\n` +
       `🍱 <b>Ăn trưa tại lớp:</b> ${item.lunch || 'Tự do'}\n` +
-      `🏙️ <b>Tham quan ngày 21/09:</b> ${item.tourPlan || 'Không'}\n` +
+      `☕ <b>Tham quan / Cafe:</b> ${item.tourPlan || 'Không'}\n` +
       (item.notes ? `\n💬 <b>Ghi chú riêng:</b>\n<i>"${item.notes}"</i>\n` : '') +
       `━━━━━━━━━━━━━━━━━━━━\n` +
-      `📊 <a href="${sheetUrl}"><b>Mở Google Sheet Quản Lý</b></a>\n` +
+      `📊 <a href="${sheetUrl}"><b>Mở Google Sheet Quản Lý</b></a> | <a href="${excelDownloadUrl}"><b>📥 Tải File Excel (.xlsx)</b></a>\n` +
       `👩‍💼 <i>Em Chi liên hệ Zalo xác nhận mã phòng sớm nhé!</i>\n` +
       `⏰ <i>${item.submittedAt}</i>`;
 
