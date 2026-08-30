@@ -1,0 +1,12 @@
+{
+  "name": "don-ban-ve-ecopark",
+  "version": "1.0.0",
+  "description": "Cẩm Nang Đón Bạn Về Lớp & Sắp Xếp Chỗ Ở, Ăn Uống - Lớp Offline Quay Dựng Video Marketing Ecopark (19-20/09)",
+  "main": "api/submit.js",
+  "scripts": {
+    "start": "npx vercel dev"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
