@@ -93,30 +93,26 @@
       font-display: swap;
     }
 
-    /* ═══ 30NGAYVIRAL.FEDU.VN LIGHT THEME TOKENS ═══ */
+    /* ═══ 30NGAYVIRAL.FEDU.VN LIGHT THEME DESIGN SYSTEM ═══ */
     :root {
       --cl-bg:                  #f8fafc;
       --cl-card:                #ffffff;
-      --cl-card2:               #f1f5f9;
+      --cl-card-zebra:          #f1f5f9;
       --cl-line:                #e2e8f0;
-      --cl-line-hover:          #10b981;
       --cl-text-title:          #0f172a;
-      --cl-text-base:           #0f172a;
       --cl-text-body:           #334155;
       --cl-text-muted:          #64748b;
       --cl-accent:              #059669;
       --cl-accent-hover:        #047857;
-      --cl-accent-text:         #ffffff;
 
       --cl-font-display:        'SVN-Integral CF', 'Integral CF', sans-serif;
       --cl-font-body:           'SVN-Aeonik', 'Aeonik', 'SVN-Poppins', 'Poppins', -apple-system, sans-serif;
       --cl-font-accent:         'SVN-Acta', 'Acta', Georgia, serif;
       --cl-font-mono:           'JetBrains Mono', monospace;
 
-      --cl-radius:              16px;
+      --cl-radius:              18px;
       --cl-radius-sm:           12px;
-      --cl-shadow-card:         0 1px 3px rgba(0, 0, 0, 0.05), 0 8px 24px -4px rgba(0, 0, 0, 0.06);
-      --cl-shadow-hover:        0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 16px 36px -8px rgba(16, 185, 129, 0.12);
+      --cl-shadow-card:         0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px -4px rgba(0, 0, 0, 0.05);
     }
 
     body {
@@ -130,7 +126,7 @@
 
     .font-integral {
       font-family: var(--cl-font-display);
-      letter-spacing: -0.015em;
+      letter-spacing: -0.01em;
     }
 
     .font-body {
@@ -145,31 +141,36 @@
       font-family: var(--cl-font-mono);
     }
 
-    /* ─── CARDS & SURFACES ─── */
+    /* ─── ZEBRA STRIPE BLOCKS ─── */
+    .zebra-block--white {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
+    .zebra-block--tint {
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+    }
+
+    /* ─── CARDS & CALLOUTS ─── */
     .cl-card {
-      background: var(--cl-card);
-      border: 1px solid var(--cl-line);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: var(--cl-radius);
       box-shadow: var(--cl-shadow-card);
-      transition: all 0.2s ease;
-    }
-    .cl-card:hover {
-      box-shadow: var(--cl-shadow-hover);
     }
 
     .cl-card-hero {
-      background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-      border: 1px solid #bbf7d0;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e2e8f0;
       border-radius: 24px;
-      box-shadow: 0 4px 20px -2px rgba(16, 185, 129, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
     }
 
-    /* ─── CALLOUT BOXES (30NGAYVIRAL STYLE) ─── */
     .cl-callout {
       padding: 12px 16px;
       border-radius: 0 12px 12px 0;
-      font-size: 14px;
-      line-height: 1.65;
+      font-size: 14.5px;
+      line-height: 1.7;
     }
     .cl-callout--success {
       background: #f0fdf4;
@@ -178,7 +179,7 @@
       color: #14532d;
     }
     .cl-callout--note {
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid #e2e8f0;
       border-left: 3.5px solid #059669;
       color: #334155;
@@ -188,7 +189,7 @@
     .custom-radio:checked + label {
       border-color: #059669;
       background-color: #f0fdf4;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.15);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
     }
     .custom-radio:checked + label .radio-circle {
       border-color: #059669;
@@ -196,7 +197,7 @@
       box-shadow: inset 0 0 0 3px #ffffff;
     }
 
-    /* ─── CTA BUTTON (TACTILE ELEVATION) ─── */
+    /* ─── CTA BUTTON ─── */
     .cl-btn-cta {
       background: linear-gradient(180deg, #10b981 0%, #059669 100%);
       color: #ffffff;
@@ -208,7 +209,7 @@
     }
     .cl-btn-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
     }
     .cl-btn-cta:active {
       transform: translateY(1px);
@@ -224,7 +225,6 @@
       max-height: 2500px;
     }
 
-    /* ─── BADGES ─── */
     .cl-badge-mono {
       font-family: var(--cl-font-mono);
       font-size: 11.5px;
@@ -249,7 +249,7 @@
           <i class="fa-solid fa-video text-base"></i>
         </div>
         <div>
-          <h1 class="font-integral font-bold text-sm sm:text-base text-slate-900 leading-tight">LỚP OFFLINE VIDEO MARKETING</h1>
+          <div class="font-integral text-sm sm:text-base text-slate-900 font-bold leading-tight">LỚP OFFLINE VIDEO MARKETING</div>
           <p class="text-xs text-emerald-700 font-semibold font-mono-code mt-0.5">Ecopark • Thứ 7 &amp; CN (19 - 20/09/2026)</p>
         </div>
       </div>
@@ -266,16 +266,17 @@
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-8 w-full">
 
-    <!-- HERO BANNER (LIGHT EDITORIAL) -->
+    <!-- HERO BANNER (LIGHT EDITORIAL WITH REGULAR HEADING) -->
     <div class="p-6 sm:p-9 cl-card-hero relative overflow-hidden">
       <div class="space-y-4 relative z-10">
-        <div class="cl-badge-mono bg-emerald-100 text-emerald-800 border border-emerald-300">
+        <div class="cl-badge-mono bg-emerald-50 text-emerald-800 border border-emerald-200">
           <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
           Đón Tiếp Học Viên Về Ecopark
         </div>
         
-        <h2 class="font-integral text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-[1.2]">
-          CẨM NANG ĐÓN BẠN VỀ LỚP &amp; SẮP XẾP CHỖ Ở, ĂN UỐNG
+        <!-- TIÊU ĐỀ REGULAR NHẸ NHÀNG THANH THOÁT -->
+        <h2 class="font-integral text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 leading-[1.3] tracking-normal">
+          Cẩm Nang Đón Bạn Về Lớp &amp; Sắp Xếp Chỗ Ở, Ăn Uống
         </h2>
         
         <div class="cl-callout cl-callout--success">
@@ -284,7 +285,7 @@
           </p>
         </div>
 
-        <p class="font-body text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+        <p class="font-body text-sm sm:text-base text-slate-700 leading-relaxed">
           Anh/chị vui lòng dành <strong>1 phút điền phiếu đăng ký</strong> để em sắp xếp chỗ nghỉ ngơi và các bữa ăn thật chu đáo cho anh/chị nhé!
         </p>
 
@@ -302,10 +303,10 @@
       </div>
     </div>
 
-    <!-- MAIN REGISTRATION FORM (LIGHT CARD) -->
-    <div class="p-6 sm:p-9 cl-card shadow-sm space-y-8 font-body">
+    <!-- MAIN REGISTRATION FORM (ZEBRA STRIPED BLOCKS) -->
+    <div class="cl-card shadow-sm overflow-hidden font-body">
       
-      <div class="flex items-center gap-3.5 pb-5 border-b border-slate-200">
+      <div class="p-6 sm:p-8 bg-white border-b border-slate-200 flex items-center gap-3.5">
         <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-base">
           <i class="fa-solid fa-clipboard-check"></i>
         </div>
@@ -315,11 +316,11 @@
         </div>
       </div>
 
-      <form id="bookingForm" class="space-y-7" onsubmit="handleSubmit(event)">
+      <form id="bookingForm" onsubmit="handleSubmit(event)" class="divide-y divide-slate-200">
 
-        <!-- 1. THÔNG TIN CÁ NHÂN -->
-        <div class="space-y-3.5">
-          <div class="flex items-center gap-2">
+        <!-- BLOCK 1: THÔNG TIN CÁ NHÂN (ZEBRA: WHITE) -->
+        <div class="p-6 sm:p-8 zebra-block--white space-y-4">
+          <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">1</span>
             <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               THÔNG TIN CÁ NHÂN CỦA ANH/CHỊ
@@ -336,8 +337,75 @@
               <input type="tel" id="phone" required placeholder="Ví dụ: 0988 123 456" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Tỉnh / Thành phố xuất phát</label>
-              <input type="text" id="city" placeholder="Ví dụ: Đà Nẵng, Hải Phòng, TP.HCM..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Tỉnh / Thành phố xuất phát (Có gợi ý)</label>
+              <input type="text" id="city" list="provinceList" placeholder="Gõ để chọn tỉnh/thành..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+              
+              <!-- DATALIST 63 TỈNH THÀNH VIỆT NAM TỰ ĐỘNG GỢI Ý -->
+              <datalist id="provinceList">
+                <option value="Hà Nội">
+                <option value="TP. Hồ Chí Minh">
+                <option value="Đà Nẵng">
+                <option value="Hải Phòng">
+                <option value="Cần Thơ">
+                <option value="Hưng Yên">
+                <option value="Bắc Ninh">
+                <option value="Hải Dương">
+                <option value="Quảng Ninh">
+                <option value="Nam Định">
+                <option value="Thái Bình">
+                <option value="Hà Nam">
+                <option value="Ninh Bình">
+                <option value="Thanh Hóa">
+                <option value="Nghệ An">
+                <option value="Hà Tĩnh">
+                <option value="Thừa Thiên Huế">
+                <option value="Quảng Nam">
+                <option value="Quảng Ngãi">
+                <option value="Bình Định">
+                <option value="Phú Yên">
+                <option value="Khánh Hòa (Nha Trang)">
+                <option value="Lâm Đồng (Đà Lạt)">
+                <option value="Đắk Lắk (Buôn Ma Thuột)">
+                <option value="Bình Dương">
+                <option value="Đồng Nai">
+                <option value="Bà Rịa - Vũng Tàu">
+                <option value="Vĩnh Phúc">
+                <option value="Phú Thọ">
+                <option value="Thái Nguyên">
+                <option value="Bắc Giang">
+                <option value="Lạng Sơn">
+                <option value="Lào Cai (Sa Pa)">
+                <option value="Yên Bái">
+                <option value="Hòa Bình">
+                <option value="Sơn La">
+                <option value="Điện Biên">
+                <option value="Lai Châu">
+                <option value="Hà Giang">
+                <option value="Cao Bằng">
+                <option value="Bắc Kạn">
+                <option value="Tuyên Quang">
+                <option value="Gia Lai">
+                <option value="Kon Tum">
+                <option value="Đắk Nông">
+                <option value="Bình Phước">
+                <option value="Tây Ninh">
+                <option value="Long An">
+                <option value="Tiền Giang">
+                <option value="Bến Tre">
+                <option value="Trà Vinh">
+                <option value="Vĩnh Long">
+                <option value="Đồng Tháp">
+                <option value="An Giang">
+                <option value="Kiên Giang (Phú Quốc)">
+                <option value="Hậu Giang">
+                <option value="Sóc Trăng">
+                <option value="Bạc Liêu">
+                <option value="Cà Mau">
+                <option value="Bình Thuận (Phan Thiết)">
+                <option value="Ninh Thuận">
+                <option value="Quảng Bình">
+                <option value="Quảng Trị">
+              </datalist>
             </div>
           </div>
 
@@ -346,11 +414,9 @@
           </div>
         </div>
 
-        <hr class="border-slate-200">
-
-        <!-- 2. NHU CẦU LƯU TRÚ (HOMESTAY WESTBAY) -->
-        <div class="space-y-3.5">
-          <div class="flex items-center gap-2">
+        <!-- BLOCK 2: NHU CẦU LƯU TRÚ (ZEBRA: TINT #F8FAFC) -->
+        <div class="p-6 sm:p-8 zebra-block--tint space-y-4">
+          <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">2</span>
             <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               NHU CẦU LƯU TRÚ (HOMESTAY WESTBAY ECOPARK)
@@ -360,7 +426,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
             <div>
               <input type="radio" name="lodging" id="lodging_shared" value="Ở ghép cùng lớp (~220k - 250k / người / đêm)" class="hidden custom-radio" checked>
-              <label for="lodging_shared" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lodging_shared" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Ở ghép cùng lớp (~220k - 250k / người / đêm)</div>
@@ -371,7 +437,7 @@
 
             <div>
               <input type="radio" name="lodging" id="lodging_studio" value="Thuê riêng căn Studio / 1PN (~650k - 750k / đêm)" class="hidden custom-radio">
-              <label for="lodging_studio" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lodging_studio" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Thuê riêng căn Studio / 1PN (~650k - 750k / đêm)</div>
@@ -382,7 +448,7 @@
 
             <div>
               <input type="radio" name="lodging" id="lodging_2pn" value="Thuê riêng căn 2PN (~950k - 1.100k / đêm)" class="hidden custom-radio">
-              <label for="lodging_2pn" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lodging_2pn" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Thuê riêng căn 2PN (~950k - 1.100k / đêm)</div>
@@ -393,7 +459,7 @@
 
             <div>
               <input type="radio" name="lodging" id="lodging_self" value="Tự túc chỗ ở / Đi về trong ngày" class="hidden custom-radio">
-              <label for="lodging_self" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lodging_self" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Tự túc chỗ ở / Đi về trong ngày</div>
@@ -408,11 +474,9 @@
           </div>
         </div>
 
-        <hr class="border-slate-200">
-
-        <!-- 3. THỜI GIAN NHẬN PHÒNG (CHECK-IN) -->
-        <div class="space-y-3.5">
-          <div class="flex items-center gap-2">
+        <!-- BLOCK 3: THỜI GIAN NHẬN PHÒNG (ZEBRA: WHITE) -->
+        <div class="p-6 sm:p-8 zebra-block--white space-y-4">
+          <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">3</span>
             <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               THỜI GIAN NHẬN PHÒNG (CHECK-IN DỰ KIẾN)
@@ -422,21 +486,21 @@
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1">
             <div>
               <input type="radio" name="checkinTime" id="checkin_fri" value="Tối Thứ Sáu (18/09) - Đặt 2 đêm" class="hidden custom-radio">
-              <label for="checkin_fri" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="checkin_fri" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Tối T6 (18/09) • Đặt 2 đêm</span>
               </label>
             </div>
             <div>
               <input type="radio" name="checkinTime" id="checkin_sat" value="Sáng Thứ Bảy (19/09) - Đặt 1 đêm" class="hidden custom-radio" checked>
-              <label for="checkin_sat" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="checkin_sat" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Sáng T7 (19/09) • Đặt 1 đêm</span>
               </label>
             </div>
             <div>
               <input type="radio" name="checkinTime" id="checkin_other" value="Khung giờ khác / Tự túc" class="hidden custom-radio">
-              <label for="checkin_other" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="checkin_other" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Khung giờ khác / Tự túc</span>
               </label>
@@ -448,11 +512,9 @@
           </div>
         </div>
 
-        <hr class="border-slate-200">
-
-        <!-- 4. BỮA TỐI THÂN MẬT (TỐI THỨ BẢY 19/09) -->
-        <div class="space-y-3.5">
-          <div class="flex items-center gap-2">
+        <!-- BLOCK 4: BỮA TỐI THÂN MẬT (ZEBRA: TINT #F8FAFC) -->
+        <div class="p-6 sm:p-8 zebra-block--tint space-y-4">
+          <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">4</span>
             <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               BỮA TỐI THÂN MẬT (TỐI THỨ BẢY 19/09 • 18H30)
@@ -462,7 +524,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
             <div>
               <input type="radio" name="dinner" id="dinner_yes" value="Có tham gia cùng lớp (~200k - 250k / người)" class="hidden custom-radio" checked>
-              <label for="dinner_yes" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="dinner_yes" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Có tham gia cùng lớp (~200k - 250k / người)</div>
@@ -473,7 +535,7 @@
 
             <div>
               <input type="radio" name="dinner" id="dinner_no" value="Tự túc ăn tối" class="hidden custom-radio">
-              <label for="dinner_no" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="dinner_no" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Tự túc ăn tối</div>
@@ -488,11 +550,9 @@
           </div>
         </div>
 
-        <hr class="border-slate-200">
-
-        <!-- 5. ĐĂNG KÝ ĂN TRƯA TẠI LỚP -->
-        <div class="space-y-3.5">
-          <div class="flex items-center gap-2">
+        <!-- BLOCK 5: ĐĂNG KÝ ĂN TRƯA TẠI LỚP (ZEBRA: WHITE) -->
+        <div class="p-6 sm:p-8 zebra-block--white space-y-4">
+          <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">5</span>
             <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               ĐĂNG KÝ ĂN TRƯA TẠI LỚP (NGÀY 1 &amp; NGÀY 2)
@@ -502,7 +562,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
             <div>
               <input type="radio" name="lunch" id="lunch_yes" value="Đặt cơm suất giao tận lớp (~55k - 65k / suất)" class="hidden custom-radio" checked>
-              <label for="lunch_yes" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lunch_yes" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Đặt cơm suất giao tận lớp (~55k - 65k / suất)</div>
@@ -513,7 +573,7 @@
 
             <div>
               <input type="radio" name="lunch" id="lunch_no" value="Tự do dùng bữa quanh khu ẩm thực Thủy Nguyên" class="hidden custom-radio">
-              <label for="lunch_no" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lunch_no" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Tự do dùng bữa quanh khu Thủy Nguyên</div>
@@ -528,11 +588,9 @@
           </div>
         </div>
 
-        <hr class="border-slate-200">
-
-        <!-- 6. KẾ HOẠCH THAM QUAN NGÀY HÔM SAU -->
-        <div class="space-y-3.5">
-          <div class="flex items-center gap-2">
+        <!-- BLOCK 6: KẾ HOẠCH THAM QUAN (ZEBRA: TINT #F8FAFC) -->
+        <div class="p-6 sm:p-8 zebra-block--tint space-y-4">
+          <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">6</span>
             <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               KẾ HOẠCH THAM QUAN NGÀY HÔM SAU (THỨ HAI 21/09)
@@ -542,7 +600,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
             <div>
               <input type="radio" name="tourPlan" id="tour_bus2" value="Xe Bus 2 Tầng ngắm Phố Cổ & Hồ Gươm (City Tour)" class="hidden custom-radio" checked>
-              <label for="tour_bus2" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="tour_bus2" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Xe Bus 2 Tầng ngắm Phố Cổ &amp; Hồ Gươm</span>
               </label>
@@ -550,7 +608,7 @@
 
             <div>
               <input type="radio" name="tourPlan" id="tour_battrang" value="Khám phá Làng Gốm Bát Tràng & Bảo Tàng Gốm (Cách 5 phút)" class="hidden custom-radio">
-              <label for="tour_battrang" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="tour_battrang" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Làng Gốm Bát Tràng &amp; Bảo Tàng Gốm (5 phút)</span>
               </label>
@@ -558,7 +616,7 @@
 
             <div>
               <input type="radio" name="tourPlan" id="tour_grandworld" value="Dạo chơi Mega Grand World - Venice thu nhỏ (Cách 10 phút)" class="hidden custom-radio">
-              <label for="tour_grandworld" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="tour_grandworld" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Mega Grand World • Venice thu nhỏ (10 phút)</span>
               </label>
@@ -566,7 +624,7 @@
 
             <div>
               <input type="radio" name="tourPlan" id="tour_home" value="Trở về tỉnh / Có lịch trình riêng" class="hidden custom-radio">
-              <label for="tour_home" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer flex items-center gap-3 transition">
+              <label for="tour_home" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
                 <span class="text-xs sm:text-sm font-bold text-slate-800">Trở về tỉnh / Có lịch trình riêng</span>
               </label>
@@ -578,19 +636,20 @@
           </div>
         </div>
 
-        <hr class="border-slate-200">
-
-        <!-- 7. GHI CHÚ & YÊU CẦU RIÊNG -->
-        <div class="space-y-2.5">
-          <label class="block font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
-            7. GHI CHÚ &amp; LỜI NHẮN RIÊNG GỬI EM
-          </label>
+        <!-- BLOCK 7: GHI CHÚ RIÊNG (ZEBRA: WHITE) -->
+        <div class="p-6 sm:p-8 zebra-block--white space-y-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">7</span>
+            <label class="block font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+              GHI CHÚ &amp; LỜI NHẮN RIÊNG GỬI EM
+            </label>
+          </div>
           <textarea id="notes" rows="2" placeholder="Ví dụ: 'Mình ăn chay', 'Mình muốn ở cùng phòng với bạn Nam', 'Mình hạ cánh sân bay Nội Bài lúc 7h sáng cần hỗ trợ bắt xe'..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition"></textarea>
           <p class="font-acta text-xs sm:text-sm text-slate-500 italic">💡 <strong>Note:</strong> Anh/chị có thể ghi chú nếu có bất kỳ yêu cầu đặc biệt nào để em hỗ trợ chu đáo nhất.</p>
         </div>
 
-        <!-- SUBMIT BUTTON -->
-        <div class="pt-4">
+        <!-- SUBMIT BUTTON AREA -->
+        <div class="p-6 sm:p-8 bg-slate-50">
           <button type="submit" id="submitBtn" class="cl-btn-cta w-full py-4 px-6 rounded-2xl text-base sm:text-lg flex items-center justify-center gap-2.5 cursor-pointer">
             <span>GỬI THÔNG TIN ĐĂNG KÝ CHO EM CHI</span>
             <i class="fa-solid fa-arrow-right"></i>
@@ -635,7 +694,7 @@
             <i class="fa-solid fa-compass"></i>
           </div>
           <h3 class="font-integral text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wide">
-            CẨM NANG ĐI LẠI &amp; THÔNG TIN HỮU ÍCH
+            CẨM NANG ĐI LẠI, TAXI &amp; THÔNG TIN HỮU ÍCH
           </h3>
         </div>
         <span class="text-xs text-slate-500 font-acta italic">Bấm từng mục để mở xem</span>
@@ -663,27 +722,96 @@
         </div>
       </div>
 
-      <!-- ACCORDION 2: XE BUS ĐẾN ECOPARK (HỌC 9H SÁNG) -->
+      <!-- ACCORDION 2: XE BUS, APP ĐI LẠI & TAXI DỰ KIẾN -->
       <div class="rounded-2xl cl-card overflow-hidden">
         <button onclick="toggleAccordion('acc-bus')" class="w-full p-4 sm:p-5 text-left flex items-center justify-between hover:bg-slate-50 transition">
           <div class="flex items-center gap-3">
             <span class="text-amber-600 text-lg"><i class="fa-solid fa-bus-simple"></i></span>
-            <span class="font-integral text-xs sm:text-sm font-bold text-slate-900">2. HƯỚNG DẪN ĐI XE BUÝT ĐẾN ECOPARK (NẾU HỌC 09:00 SÁNG)</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-slate-900">2. HƯỚNG DẪN XE BUÝT, LINK TẢI APP &amp; GIÁ TAXI DỰ KIẾN</span>
           </div>
           <i id="icon-acc-bus" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-bus" class="accordion-content px-5 pb-5 space-y-3.5 text-xs sm:text-sm text-slate-700">
+        <div id="acc-bus" class="accordion-content px-5 pb-5 space-y-4 text-xs sm:text-sm text-slate-700">
+          
+          <!-- KHUYẾN NGHỊ THỜI GIAN -->
           <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200 space-y-1.5">
-            <div class="text-amber-900 font-integral text-xs font-bold">⏰ KHUYẾN NGHỊ THỜI GIAN KHỞI HÀNH:</div>
+            <div class="text-amber-900 font-integral text-xs font-bold">⏰ KHUYẾN NGHỊ THỜI GIAN KHỞI HÀNH (HỌC 09:00 SÁNG):</div>
             <p class="font-acta text-xs sm:text-sm text-amber-950 italic leading-relaxed">
               Thời gian xe chạy từ nội thành sang Ecopark mất khoảng <strong>45 – 55 phút</strong>. Anh/chị nên bắt xe chuyến <strong>07:30 – 07:45 sáng</strong> để tới trạm Westbay lúc <strong>08:30 – 08:40</strong>. Sau đó thong thả đi bộ 2 phút vào Hill Top Cafe, nhận tài liệu, order ly cafe sáng trước khi lớp bắt đầu đúng <strong>09:00</strong>.
             </p>
           </div>
+
+          <!-- BẢNG GIÁ TAXI DỰ KIẾN TỪ CÁC ĐẦU MỐI -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div class="font-integral text-xs font-bold text-slate-900 flex items-center gap-2">
+              <i class="fa-solid fa-taxi text-amber-600"></i>
+              <span>BẢNG GIÁ GRAB / TAXI DỰ KIẾN ĐẾN ECOPARK (WESTBAY)</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-body text-xs">
+              <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex justify-between items-center">
+                <span>✈️ <strong>Sân bay Nội Bài</strong> &rarr; Westbay (~38km):</span>
+                <span class="font-mono-code font-bold text-emerald-700">~350k – 420k</span>
+              </div>
+              <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex justify-between items-center">
+                <span>🏙️ <strong>Hồ Gươm / Phố Cổ</strong> &rarr; Westbay (~15km):</span>
+                <span class="font-mono-code font-bold text-emerald-700">~160k – 220k</span>
+              </div>
+              <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex justify-between items-center">
+                <span>🚉 <strong>Ga Hà Nội / Giáp Bát</strong> &rarr; Westbay (~16km):</span>
+                <span class="font-mono-code font-bold text-emerald-700">~170k – 230k</span>
+              </div>
+              <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex justify-between items-center">
+                <span>🚌 <strong>Bến xe Mỹ Đình</strong> &rarr; Westbay (~26km):</span>
+                <span class="font-mono-code font-bold text-emerald-700">~280k – 340k</span>
+              </div>
+            </div>
+          </div>
           
-          <div class="space-y-2 pt-1 font-body">
+          <!-- CÁC TUYẾN BUS & LINK TẢI APP CHÍNH HÃNG -->
+          <div class="space-y-3 pt-1 font-body">
+            <div class="font-integral text-xs font-bold text-slate-900">🚌 CÁC TUYẾN XE BUÝT &amp; ỨNG DỤNG TRA CỨU TỐT NHẤT:</div>
+            
             <p>• <strong>Tuyến Xe Buýt Số 69:</strong> (Bác Cổ / Trần Khánh Dư &rarr; Thủy Nguyên &rarr; <strong>Westbay Ecopark</strong>). Tần suất 20-30 phút/chuyến. <em>Giá vé: 9.000đ/lượt</em>.</p>
             <p>• <strong>Tuyến Xe Buýt Số 47B:</strong> (Long Biên &rarr; Bát Tràng &rarr; <strong>Westbay Ecopark</strong>). <em>Giá vé: 9.000đ/lượt</em>.</p>
-            <p>• <strong>Hệ Thống Ecobus &amp; VinBus:</strong> Tra cứu lộ trình các tuyến xe buýt nội thành kết nối sang Ecopark qua App <em>EcoOne</em> (Tổng đài Ecobus: <a href="tel:1900555565" class="text-emerald-700 font-mono-code font-bold">1900 555 565</a>) hoặc ứng dụng <em>VinBus</em>.</p>
+            
+            <!-- APP 1: VINBUS -->
+            <div class="p-3.5 bg-white rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 shadow-sm">
+              <div>
+                <div class="font-bold text-slate-900 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span>1. Ứng Dụng VinBus (Khuyên dùng nhất - Xe điện êm ái, tra cứu thời gian thực)</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">Theo dõi vị trí xe bus điện và giờ đến trạm chính xác từng phút</p>
+              </div>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <a href="https://apps.apple.com/vn/app/vinbus/id1552597793" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-apple text-sm"></i> iOS
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=vn.vinbus.passenger" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-google-play text-xs"></i> Android
+                </a>
+              </div>
+            </div>
+
+            <!-- APP 2: ECOONE / ECOBUS -->
+            <div class="p-3.5 bg-white rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 shadow-sm">
+              <div>
+                <div class="font-bold text-slate-900 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                  <span>2. Ứng Dụng EcoOne &amp; Tổng Đài Ecobus Ecopark</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">Tổng đài hỗ trợ Ecobus: <a href="tel:1900555565" class="text-emerald-700 font-mono-code font-bold">1900 555 565</a></p>
+              </div>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <a href="https://apps.apple.com/vn/app/ecoone/id1458896061" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-apple text-sm"></i> iOS
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.ecopark.ecoone" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-google-play text-xs"></i> Android
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
