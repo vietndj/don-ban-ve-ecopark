@@ -607,10 +607,10 @@
             </div>
 
             <div>
-              <input type="radio" name="tourPlan" id="tour_battrang" value="Khám phá Làng Gốm Bát Tràng & Bảo Tàng Gốm (Cách 5 phút)" class="hidden custom-radio">
-              <label for="tour_battrang" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
+              <input type="radio" name="tourPlan" id="tour_cafe_eco" value="Tour Cà Phê Trứng Giảng & Check-in Hồ Thiên Nga Ecopark" class="hidden custom-radio">
+              <label for="tour_cafe_eco" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
-                <span class="text-xs sm:text-sm font-bold text-slate-800">Làng Gốm Bát Tràng &amp; Bảo Tàng Gốm (5 phút)</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-800">Cafe Trứng Giảng &amp; Chill Hồ Thiên Nga</span>
               </label>
             </div>
 
@@ -877,16 +877,18 @@
         </div>
       </div>
 
-      <!-- ACCORDION 4: XE BUS 2 TẦNG & 3 ĐIỂM ĐI CHƠI -->
+      <!-- ACCORDION 4: CÁC ĐIỂM TRẢI NGHIỆM & CAFE ECOPARK -->
       <div class="rounded-2xl cl-card overflow-hidden">
         <button onclick="toggleAccordion('acc-tour')" class="w-full p-4 sm:p-5 text-left flex items-center justify-between hover:bg-slate-50 transition">
           <div class="flex items-center gap-3">
-            <span class="text-sky-600 text-lg"><i class="fa-solid fa-landmark"></i></span>
-            <span class="font-integral text-xs sm:text-sm font-bold text-slate-900">4. LINK ĐẶT VÉ BUS 2 TẦNG &amp; 3 ĐIỂM DU LỊCH NGÀY HÔM SAU</span>
+            <span class="text-sky-600 text-lg"><i class="fa-solid fa-mug-saucer"></i></span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-slate-900">4. ĐIỂM DU LỊCH &amp; CHUỖI CAFE SỐNG ẢO ECOPARK NGÀY HÔM SAU</span>
           </div>
           <i id="icon-acc-tour" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
         <div id="acc-tour" class="accordion-content px-5 pb-5 space-y-3.5 text-xs sm:text-sm text-slate-700 font-body">
+          
+          <!-- ĐIỂM 1: BUS 2 TẦNG -->
           <div class="p-4 bg-sky-50/60 rounded-xl border border-sky-200 space-y-2">
             <div class="font-bold text-slate-900 flex items-center justify-between">
               <span class="font-integral text-xs text-sky-900">🚌 1. CITY TOUR XE BUS 2 TẦNG NGẮM PHỐ CỔ &amp; HỒ GƯƠM</span>
@@ -896,15 +898,21 @@
             </div>
             <p>• <strong>Điểm đón chính:</strong> Nhà Hát Lớn Hà Nội (Số 1 Tràng Tiền) hoặc Quảng trường Đông Kinh Nghĩa Thục (Bờ Hồ Gươm).</p>
             <p>• <strong>Cách đi từ Ecopark:</strong> Bắt xe Ecobus hoặc bus 69 từ Westbay về thẳng Nhà Hát Lớn (khoảng 40 phút).</p>
-            <p>• <strong>Trải nghiệm:</strong> Ngắm 30 danh thắng từ tầng 2 nóc mở (Lăng Bác, Hoàng Thành, Văn Miếu, Hồ Tây...), thưởng thức cafe Trứng Giảng, Phở Bát Đàn, Kem Tràng Tiền.</p>
+            <p>• <strong>Trải nghiệm:</strong> Ngắm 30 danh thắng từ tầng 2 nóc mở (Lăng Bác, Hoàng Thành, Văn Miếu, Hồ Tây...), thưởng thức Phở Bát Đàn, Kem Tràng Tiền.</p>
           </div>
 
-          <div class="p-4 bg-amber-50/60 rounded-xl border border-amber-200 space-y-1.5">
-            <div class="font-integral text-xs font-bold text-amber-900">🏺 2. LÀNG GỐM BÁT TRÀNG &amp; BẢO TÀNG GỐM (CÁCH 2KM - 5 PHÚT)</div>
-            <p>• Nằm sát vách Ecopark, bắt Grab taxi chỉ mất 5 phút (~35.000đ).</p>
-            <p>• Trải nghiệm tự tay vuốt nặn gốm và check-in <strong>Bảo tàng Gốm Bát Tràng</strong> (kiến trúc 7 vòng xoay đất nung khổng lồ – góc quay video cực kỳ viral).</p>
+          <!-- ĐIỂM 2: TOUR CAFE ECOPARK (THAY CHO BÁT TRÀNG) -->
+          <div class="p-4 bg-emerald-50/70 rounded-xl border border-emerald-200 space-y-2">
+            <div class="font-integral text-xs font-bold text-emerald-900 flex items-center justify-between">
+              <span>☕ 2. TOUR CAFE TRỨNG GIẢNG &amp; SỐNG ẢO VEN HỒ THIÊN NGA (NỘI KHU ECOPARK)</span>
+              <span class="text-[11px] font-mono-code px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">Đi bộ &amp; Xe điện</span>
+            </div>
+            <p>• <strong>Cafe Giảng Ecopark (Số 55 Thủy Nguyên):</strong> Thưởng thức ly <em>Cà phê Trứng béo ngậy chuẩn vị Hà Nội gốc</em> giữa không gian rợp bóng cây xanh mát mà không cần phải đi vào nội thành đông đúc.</p>
+            <p>• <strong>Khu Cafe Ven Hồ Thiên Nga &amp; Vườn Vua:</strong> Ngồi thưởng trà ngắm đàn thiên nga bơi lội, check-in đồi cỏ, rừng cọ, hít thở không khí 1 triệu cây xanh và săn những góc quay B-roll video tuyệt đẹp.</p>
+            <p>• <strong>Cộng Cà Phê &amp; Gióng Cafe (Phân khu Thủy Nguyên):</strong> Không gian retro hoài niệm vintage, view thoáng đãng để anh/chị ngồi đàm đạo, review bài tập cùng nhóm bạn trong lớp.</p>
           </div>
 
+          <!-- ĐIỂM 3: MEGA GRAND WORLD -->
           <div class="p-4 bg-purple-50/60 rounded-xl border border-purple-200 space-y-1.5">
             <div class="font-integral text-xs font-bold text-purple-900">🎡 3. MEGA GRAND WORLD HÀ NỘI - VENICE THU NHỎ (CÁCH 10 PHÚT)</div>
             <p>• Trải nghiệm chèo thuyền Gondola trên sông phong cách Ý, dạo phố rực rỡ sắc màu, check-in cầu Đông Tây và xem show thực cảnh triệu đô <em>The Grand Voyage</em>.</p>
