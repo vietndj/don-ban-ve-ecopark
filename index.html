@@ -8,49 +8,124 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts & Font Awesome -->
+  <!-- Google Fonts & CDN Fallbacks -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/acta" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/aeonik" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-            },
-            dark: {
-              bg: '#080d1a',
-              card: '#0f172a',
-              cardHover: '#1e293b',
-              border: '#1e293b',
-              muted: '#94a3b8'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
+    /* ─── STRICT TYPOGRAPHY STACK: SVN-Integral CF, SVN-Aeonik/Poppins, SVN-Acta ─── */
+    @font-face {
+      font-family: 'SVN-Integral CF';
+      src: url('/fonts/SVN-IntegralCF-Bold.ttf') format('truetype'),
+           url('./fonts/SVN-IntegralCF-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Integral CF';
+      src: url('/fonts/SVN-IntegralCF-Heavy.ttf') format('truetype'),
+           url('./fonts/SVN-IntegralCF-Heavy.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('/fonts/SVN-AEONIK-REGULAR.TTF') format('truetype'),
+           url('./fonts/SVN-AEONIK-REGULAR.TTF') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('/fonts/SVN-AEONIK-MEDIUM.TTF') format('truetype'),
+           url('./fonts/SVN-AEONIK-MEDIUM.TTF') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('/fonts/SVN-AEONIK-BOLD.TTF') format('truetype'),
+           url('./fonts/SVN-AEONIK-BOLD.TTF') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('/fonts/SVN-Acta-Book.ttf') format('truetype'),
+           url('./fonts/SVN-Acta-Book.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('/fonts/SVN-Acta-Medium.ttf') format('truetype'),
+           url('./fonts/SVN-Acta-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('/fonts/SVN-Acta-Bold.ttf') format('truetype'),
+           url('./fonts/SVN-Acta-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('/fonts/SVN-Acta-BookItalic.ttf') format('truetype'),
+           url('./fonts/SVN-Acta-BookItalic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* GLOBAL ROOTS */
+    :root {
+      --font-integral: 'SVN-Integral CF', 'Integral CF', sans-serif;
+      --font-body: 'SVN-Aeonik', 'Aeonik', 'SVN-Poppins', 'Poppins', sans-serif;
+      --font-acta: 'SVN-Acta', 'Acta', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--font-body);
       background-color: #080d1a;
       color: #e2e8f0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    .font-integral {
+      font-family: var(--font-integral);
+      letter-spacing: -0.02em;
+    }
+
+    .font-body {
+      font-family: var(--font-body);
+    }
+
+    .font-acta {
+      font-family: var(--font-acta);
+    }
+
+    .font-mono-code {
+      font-family: var(--font-mono);
+    }
+
     .glass-card {
       background: rgba(15, 23, 42, 0.92);
       backdrop-filter: blur(16px);
@@ -88,15 +163,15 @@
           <i class="fa-solid fa-video text-lg"></i>
         </div>
         <div>
-          <h1 class="font-bold text-sm sm:text-base text-white tracking-tight">LỚP OFFLINE VIDEO MARKETING</h1>
-          <p class="text-xs text-emerald-400 font-mono">Ecopark • Thứ 7 & CN (19 - 20/09/2026)</p>
+          <h1 class="font-integral font-bold text-sm sm:text-base text-white tracking-tight">LỚP OFFLINE VIDEO MARKETING</h1>
+          <p class="text-xs text-emerald-400 font-mono-code">Ecopark • Thứ 7 & CN (19 - 20/09/2026)</p>
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <a href="#thong-tin-phu" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+        <a href="#thong-tin-phu" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition font-body">
           <i class="fa-solid fa-circle-info text-emerald-400"></i> Cẩm Nang Đi Lại
         </a>
-        <a href="https://zalo.me/0977455794" target="_blank" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition flex items-center gap-1.5 shadow-md shadow-emerald-900/20">
+        <a href="https://zalo.me/0977455794" target="_blank" class="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition flex items-center gap-1.5 shadow-md shadow-emerald-900/20 font-body">
           <i class="fa-solid fa-phone"></i> Em Chi: 097 745 5794
         </a>
       </div>
@@ -110,45 +185,45 @@
       <div class="absolute -top-24 -right-24 w-60 h-60 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
       
       <div class="space-y-4 relative z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono-code font-bold uppercase">
           <i class="fa-solid fa-house-chimney text-xs"></i> Đón Tiếp Học Viên Về Ecopark
         </div>
         
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-          Cẩm Nang Đón Bạn Về Lớp &amp; Sắp Xếp Chỗ Ở, Ăn Uống
+        <h2 class="font-integral text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+          CẨM NANG ĐÓN BẠN VỀ LỚP &amp; SẮP XẾP CHỖ Ở, ĂN UỐNG
         </h2>
         
-        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-          Chào anh/chị, để chuyến đi về Ecopark tham gia lớp <strong>Quay Dựng Video Marketing</strong> diễn ra thuận tiện, thoải mái và trọn vẹn nhất, em đã chuẩn bị sẵn cẩm nang di chuyển, ăn uống và tham quan chi tiết ở bên dưới.
+        <p class="font-acta text-base sm:text-lg text-slate-200 leading-relaxed italic">
+          "Chào anh/chị, để chuyến đi về Ecopark tham gia lớp <strong>Quay Dựng Video Marketing</strong> diễn ra thuận tiện, thoải mái và trọn vẹn nhất, em đã chuẩn bị sẵn cẩm nang di chuyển, ăn uống và tham quan chi tiết ở bên dưới."
         </p>
 
-        <p class="text-sm text-slate-300 leading-relaxed">
+        <p class="font-body text-sm sm:text-base text-slate-300 leading-relaxed">
           Anh/chị vui lòng dành <strong>1 phút điền phiếu đăng ký</strong> để em sắp xếp chỗ nghỉ ngơi và các bữa ăn thật chu đáo cho anh/chị nhé!
         </p>
 
         <!-- HOTLINE PILLS -->
-        <div class="pt-2 flex flex-wrap gap-3">
+        <div class="pt-2 flex flex-wrap gap-3 font-body">
           <a href="tel:0977455794" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-xs sm:text-sm font-medium text-slate-200 hover:border-emerald-400 transition">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Hỗ trợ nhận phòng (Em Chi): <strong class="text-emerald-400 font-mono">097 745 5794</strong></span>
+            <span>Hỗ trợ nhận phòng (Em Chi): <strong class="text-emerald-400 font-mono-code">097 745 5794</strong></span>
           </a>
           <a href="https://zalo.me/0934688632" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-700 text-xs sm:text-sm font-medium text-slate-200 hover:border-slate-500 transition">
             <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-            <span>Zalo Thầy Nguyễn Đức Việt: <strong class="text-slate-100 font-mono">0934 688 632</strong></span>
+            <span>Zalo Thầy Nguyễn Đức Việt: <strong class="text-slate-100 font-mono-code">0934 688 632</strong></span>
           </a>
         </div>
       </div>
     </div>
 
     <!-- MAIN REGISTRATION FORM -->
-    <div class="p-6 sm:p-8 rounded-3xl glass-card border border-slate-800 shadow-xl space-y-7">
+    <div class="p-6 sm:p-8 rounded-3xl glass-card border border-slate-800 shadow-xl space-y-7 font-body">
       <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
         <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
           <i class="fa-solid fa-clipboard-list"></i>
         </div>
         <div>
-          <h3 class="font-bold text-white text-lg">Phiếu Đăng Ký Chỗ Nghỉ &amp; Bữa Ăn</h3>
-          <p class="text-xs text-slate-400">Điền nhanh trong 1 phút • Em sẽ liên hệ qua Zalo gửi mã phòng</p>
+          <h3 class="font-integral font-bold text-white text-base sm:text-lg">PHIẾU ĐĂNG KÝ CHỖ NGHỈ &amp; BỮA ĂN</h3>
+          <p class="text-xs text-slate-400 font-body">Điền nhanh trong 1 phút • Em sẽ liên hệ qua Zalo gửi mã phòng</p>
         </div>
       </div>
 
@@ -156,25 +231,25 @@
 
         <!-- 1. THÔNG TIN CÁ NHÂN -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <h4 class="font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             1. THÔNG TIN CÁ NHÂN (GỌN NHẸ)
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1.5">Họ và tên của anh/chị <span class="text-rose-400">*</span></label>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">Họ và tên của anh/chị <span class="text-rose-400">*</span></label>
               <input type="text" id="fullName" required placeholder="Ví dụ: Nguyễn Văn Nam" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none transition">
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1.5">Số điện thoại / Zalo <span class="text-rose-400">*</span></label>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">Số điện thoại / Zalo <span class="text-rose-400">*</span></label>
               <input type="tel" id="phone" required placeholder="Ví dụ: 0988 123 456" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none transition">
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1.5">Tỉnh / Thành phố xuất phát</label>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">Tỉnh / Thành phố xuất phát</label>
               <input type="text" id="city" placeholder="Ví dụ: Đà Nẵng, Hải Phòng, TP.HCM..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none transition">
             </div>
           </div>
-          <p class="text-xs text-slate-400 flex items-start gap-1.5">
-            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5"></i>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 flex items-start gap-1.5 italic">
+            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5 not-italic"></i>
             <span><strong>Note:</strong> Em sẽ nhắn tin gửi mã phòng, hướng dẫn nhận phòng và tài liệu học qua số Zalo này của anh/chị.</span>
           </p>
         </div>
@@ -183,7 +258,7 @@
 
         <!-- 2. NHU CẦU LƯU TRÚ (HOMESTAY WESTBAY) -->
         <div class="space-y-3">
-          <h4 class="text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <h4 class="font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             2. NHU CẦU LƯU TRÚ (HOMESTAY WESTBAY ECOPARK)
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -231,8 +306,8 @@
               </label>
             </div>
           </div>
-          <p class="text-xs text-slate-400 flex items-start gap-1.5 pt-1">
-            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5"></i>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 flex items-start gap-1.5 pt-1 italic">
+            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5 not-italic"></i>
             <span><strong>Note:</strong> Khu căn hộ Homestay Westbay cách lớp học Hill Top chỉ 200m (3 phút đi bộ ven hồ). Nếu anh/chị chọn ở ghép, em sẽ sắp xếp phòng chu đáo, gửi hình ảnh căn hộ và mã nhận phòng qua Zalo trước ngày học.</span>
           </p>
         </div>
@@ -241,34 +316,34 @@
 
         <!-- 3. THỜI GIAN NHẬN PHÒNG (CHECK-IN) -->
         <div class="space-y-3">
-          <h4 class="text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <h4 class="font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             3. THỜI GIAN NHẬN PHÒNG (CHECK-IN DỰ KIẾN)
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div>
               <input type="radio" name="checkinTime" id="checkin_fri" value="Tối Thứ Sáu (18/09) - Đặt 2 đêm" class="hidden custom-radio">
-              <label for="checkin_fri" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="checkin_fri" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Tối Thứ Sáu (18/09) • Đặt 2 đêm</span>
               </label>
             </div>
             <div>
               <input type="radio" name="checkinTime" id="checkin_sat" value="Sáng Thứ Bảy (19/09) - Đặt 1 đêm" class="hidden custom-radio" checked>
-              <label for="checkin_sat" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="checkin_sat" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Sáng Thứ Bảy (19/09) • Đặt 1 đêm</span>
               </label>
             </div>
             <div>
               <input type="radio" name="checkinTime" id="checkin_other" value="Khung giờ khác / Tự túc" class="hidden custom-radio">
-              <label for="checkin_other" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="checkin_other" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Khung giờ khác / Tự túc</span>
               </label>
             </div>
           </div>
-          <p class="text-xs text-slate-400 flex items-start gap-1.5">
-            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5"></i>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 flex items-start gap-1.5 italic">
+            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5 not-italic"></i>
             <span><strong>Note:</strong> Lớp học bắt đầu lúc 09:00 sáng Thứ Bảy. Nếu anh/chị ở xa đến từ tối Thứ Sáu, em sẽ hỗ trợ nhận phòng sớm để anh/chị nghỉ ngơi lấy lại năng lượng.</span>
           </p>
         </div>
@@ -277,7 +352,7 @@
 
         <!-- 4. BỮA TỐI THÂN MẬT (TỐI THỨ BẢY 19/09) -->
         <div class="space-y-3">
-          <h4 class="text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <h4 class="font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             4. BỮA TỐI THÂN MẬT (TỐI THỨ BẢY 19/09 • 18H30)
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -303,8 +378,8 @@
               </label>
             </div>
           </div>
-          <p class="text-xs text-slate-400 flex items-start gap-1.5 pt-1">
-            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5"></i>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 flex items-start gap-1.5 pt-1 italic">
+            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5 not-italic"></i>
             <span><strong>Note:</strong> Bữa tối ấm cúng có Thầy Việt cùng tham gia trò chuyện và chia sẻ kinh nghiệm thực chiến cùng cả lớp. Anh/chị đăng ký trước để em báo số lượng cho bếp chuẩn bị đồ ăn thật tươi ngon và chu đáo ạ.</span>
           </p>
         </div>
@@ -313,7 +388,7 @@
 
         <!-- 5. ĐĂNG KÝ ĂN TRƯA TẠI LỚP -->
         <div class="space-y-3">
-          <h4 class="text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <h4 class="font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             5. ĐĂNG KÝ ĂN TRƯA TẠI LỚP (NGÀY 1 &amp; NGÀY 2)
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -339,8 +414,8 @@
               </label>
             </div>
           </div>
-          <p class="text-xs text-slate-400 flex items-start gap-1.5 pt-1">
-            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5"></i>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 flex items-start gap-1.5 pt-1 italic">
+            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5 not-italic"></i>
             <span><strong>Note:</strong> Suất cơm niêu / cơm gà nóng hổi sẽ được giao đúng 12h00 tại tầng 2 Hill Top Cafe, giúp anh/chị có trọn vẹn thời gian nghỉ trưa mát mẻ mà không phải đi lại ngoài nắng.</span>
           </p>
         </div>
@@ -349,13 +424,13 @@
 
         <!-- 6. KẾ HOẠCH THAM QUAN NGÀY HÔM SAU -->
         <div class="space-y-3">
-          <h4 class="text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <h4 class="font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             6. KẾ HOẠCH THAM QUAN NGÀY HÔM SAU (THỨ HAI 21/09)
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <input type="radio" name="tourPlan" id="tour_bus2" value="Xe Bus 2 Tầng ngắm Phố Cổ & Hồ Gươm (City Tour)" class="hidden custom-radio" checked>
-              <label for="tour_bus2" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="tour_bus2" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Xe Bus 2 Tầng ngắm Phố Cổ &amp; Hồ Gươm</span>
               </label>
@@ -363,7 +438,7 @@
 
             <div>
               <input type="radio" name="tourPlan" id="tour_battrang" value="Khám phá Làng Gốm Bát Tràng & Bảo Tàng Gốm (Cách 5 phút)" class="hidden custom-radio">
-              <label for="tour_battrang" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="tour_battrang" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Làng Gốm Bát Tràng &amp; Bảo Tàng Gốm (5 phút)</span>
               </label>
@@ -371,7 +446,7 @@
 
             <div>
               <input type="radio" name="tourPlan" id="tour_grandworld" value="Dạo chơi Mega Grand World - Venice thu nhỏ (Cách 10 phút)" class="hidden custom-radio">
-              <label for="tour_grandworld" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="tour_grandworld" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Mega Grand World • Venice thu nhỏ (10 phút)</span>
               </label>
@@ -379,14 +454,14 @@
 
             <div>
               <input type="radio" name="tourPlan" id="tour_home" value="Trở về tỉnh / Có lịch trình riêng" class="hidden custom-radio">
-              <label for="tour_home" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-medium text-slate-200">
+              <label for="tour_home" class="p-3 rounded-xl border border-slate-700 bg-slate-900/70 hover:border-slate-600 cursor-pointer flex items-center gap-2.5 transition text-xs font-semibold text-slate-200">
                 <div class="w-4 h-4 rounded-full border border-slate-500 radio-icon flex-shrink-0"></div>
                 <span>Trở về tỉnh / Có lịch trình riêng</span>
               </label>
             </div>
           </div>
-          <p class="text-xs text-slate-400 flex items-start gap-1.5 pt-1">
-            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5"></i>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 flex items-start gap-1.5 pt-1 italic">
+            <i class="fa-solid fa-circle-info text-emerald-400 mt-0.5 not-italic"></i>
             <span><strong>Note:</strong> Anh/chị chọn phương án quan tâm để em gửi hướng dẫn chi tiết, link mua vé ưu đãi và hỗ trợ ghép nhóm đi chung xe với các bạn trong lớp.</span>
           </p>
         </div>
@@ -395,16 +470,16 @@
 
         <!-- 7. GHI CHÚ & YÊU CẦU RIÊNG -->
         <div class="space-y-2">
-          <label class="block text-xs font-bold font-mono uppercase text-emerald-400 tracking-wider">
+          <label class="block font-integral text-xs font-bold uppercase text-emerald-400 tracking-wider">
             7. GHI CHÚ &amp; LỜI NHẮN RIÊNG GỬI EM
           </label>
           <textarea id="notes" rows="2" placeholder="Ví dụ: 'Mình ăn chay', 'Mình muốn ở cùng phòng với bạn Nam', 'Mình hạ cánh sân bay Nội Bài lúc 7h sáng cần hỗ trợ bắt xe'..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none transition"></textarea>
-          <p class="text-xs text-slate-400">💡 <strong>Note:</strong> Anh/chị có thể ghi chú nếu có bất kỳ yêu cầu đặc biệt nào để em hỗ trợ chu đáo nhất.</p>
+          <p class="font-acta text-xs sm:text-sm text-slate-400 italic">💡 <strong>Note:</strong> Anh/chị có thể ghi chú nếu có bất kỳ yêu cầu đặc biệt nào để em hỗ trợ chu đáo nhất.</p>
         </div>
 
         <!-- SUBMIT BUTTON -->
         <div class="pt-4">
-          <button type="submit" id="submitBtn" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-base shadow-lg shadow-emerald-900/40 hover:shadow-emerald-900/60 transition flex items-center justify-center gap-2">
+          <button type="submit" id="submitBtn" class="font-integral w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm sm:text-base tracking-wide shadow-lg shadow-emerald-900/40 hover:shadow-emerald-900/60 transition flex items-center justify-center gap-2">
             <span>GỬI THÔNG TIN ĐĂNG KÝ CHO EM CHI</span>
             <i class="fa-solid fa-arrow-right"></i>
           </button>
@@ -415,18 +490,18 @@
 
     <!-- SUCCESS POPUP MODAL -->
     <div id="successModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
-      <div class="max-w-md w-full p-6 rounded-3xl glass-card border border-emerald-500/40 shadow-2xl space-y-4 text-center animate-fade-in">
+      <div class="max-w-md w-full p-6 rounded-3xl glass-card border border-emerald-500/40 shadow-2xl space-y-4 text-center animate-fade-in font-body">
         <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-3xl">
           <i class="fa-solid fa-circle-check"></i>
         </div>
-        <h3 class="text-xl font-bold text-white">ĐĂNG KÝ THÀNH CÔNG!</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">
-          Cảm ơn anh/chị! Em Chi đã nhận được thông tin và sẽ chủ động nhắn tin qua Zalo để gửi mã phòng, hướng dẫn nhận phòng và tài liệu học cho anh/chị sớm nhất nhé.
+        <h3 class="font-integral text-lg sm:text-xl font-bold text-white">ĐĂNG KÝ THÀNH CÔNG!</h3>
+        <p class="font-acta text-sm sm:text-base text-slate-200 leading-relaxed italic">
+          "Cảm ơn anh/chị! Em Chi đã nhận được thông tin và sẽ chủ động nhắn tin qua Zalo để gửi mã phòng, hướng dẫn nhận phòng và tài liệu học cho anh/chị sớm nhất nhé."
         </p>
-        <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs font-mono text-emerald-400">
+        <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs font-mono-code text-emerald-400">
           Mã đăng ký: <span id="modalResponseId" class="font-bold">ECO-2026-***</span>
         </div>
-        <div class="pt-2 flex gap-3">
+        <div class="pt-2 flex gap-3 font-body">
           <button onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold transition">
             Đóng Lại
           </button>
@@ -440,18 +515,18 @@
     <!-- ================================================================= -->
     <!-- KHU THÔNG TIN PHỤ DƯỚI CÙNG (CẨM NANG & LINK TRA CỨU NHỎ GỌN) -->
     <!-- ================================================================= -->
-    <div id="thong-tin-phu" class="space-y-4 pt-6">
+    <div id="thong-tin-phu" class="space-y-4 pt-6 font-body">
       
       <div class="flex items-center justify-between pb-2 border-b border-slate-800">
         <div class="flex items-center gap-2.5">
           <div class="w-6 h-6 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">
             <i class="fa-solid fa-compass"></i>
           </div>
-          <h3 class="text-sm sm:text-base font-bold text-white uppercase font-mono tracking-wider">
+          <h3 class="font-integral text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
             KHU THÔNG TIN PHỤ &amp; CẨM NANG HƯỚNG DẪN
           </h3>
         </div>
-        <span class="text-xs text-slate-400">Bấm từng mục để xem</span>
+        <span class="text-xs text-slate-400 font-acta italic">Bấm từng mục để mở xem chi tiết</span>
       </div>
 
       <!-- ACCORDION 1: GOOGLE MAPS & ĐƯỜNG ĐI -->
@@ -459,16 +534,16 @@
         <button onclick="toggleAccordion('acc-map')" class="w-full p-4 text-left flex items-center justify-between hover:bg-slate-800/40 transition">
           <div class="flex items-center gap-3">
             <span class="text-emerald-400 text-base"><i class="fa-solid fa-map-location-dot"></i></span>
-            <span class="text-sm font-semibold text-white">1. Vị Trí Lớp Học &amp; Bản Đồ Google Maps</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-white">1. VỊ TRÍ LỚP HỌC &amp; BẢN ĐỒ GOOGLE MAPS</span>
           </div>
           <i id="icon-acc-map" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-map" class="accordion-content px-4 pb-4 space-y-3 text-xs text-slate-300">
+        <div id="acc-map" class="accordion-content px-4 pb-4 space-y-3 text-xs sm:text-sm text-slate-300">
           <p>• <strong>Địa điểm học:</strong> <strong>Hill Top Cafe Ecopark</strong> (Tầng 2 nhà kính &amp; đồi cỏ thoáng mát).</p>
           <p>• <strong>Vị trí:</strong> Bùng binh Westbay &amp; cụm Swanlake Onsen, Khu đô thị Ecopark, Hưng Yên.</p>
           <p>• <strong>Bãi đỗ xe:</strong> Xe máy &amp; Ô tô đỗ rộng rãi tại sảnh chung cư Westbay hoặc phân khu Swanlake Onsen (cách lớp 50m – 100m).</p>
           <div class="pt-2">
-            <a href="https://www.google.com/maps/search/?api=1&query=Hilltop+cafe+Ecopark" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 font-bold hover:bg-emerald-600 hover:text-white transition">
+            <a href="https://www.google.com/maps/search/?api=1&query=Hilltop+cafe+Ecopark" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 font-bold hover:bg-emerald-600 hover:text-white transition font-body">
               <i class="fa-solid fa-diamond-turn-right"></i>
               <span>Mở Chỉ Đường Google Maps (Hilltop Cafe)</span>
             </a>
@@ -481,20 +556,22 @@
         <button onclick="toggleAccordion('acc-bus')" class="w-full p-4 text-left flex items-center justify-between hover:bg-slate-800/40 transition">
           <div class="flex items-center gap-3">
             <span class="text-amber-400 text-base"><i class="fa-solid fa-bus-simple"></i></span>
-            <span class="text-sm font-semibold text-white">2. Hướng Dẫn Đi Xe Buýt Đến Ecopark (Nếu Học Lúc 09:00 Sáng)</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-white">2. HƯỚNG DẪN ĐI XE BUÝT ĐẾN ECOPARK (NẾU HỌC 09:00 SÁNG)</span>
           </div>
           <i id="icon-acc-bus" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-bus" class="accordion-content px-4 pb-4 space-y-3 text-xs text-slate-300">
-          <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
-            <div class="text-emerald-400 font-bold font-mono">⏰ KHUYẾN NGHỊ THỜI GIAN KHỞI HÀNH:</div>
-            <p>Thời gian xe chạy từ nội thành sang Ecopark mất khoảng <strong>45 – 55 phút</strong>. Anh/chị nên bắt xe chuyến <strong>07:30 – 07:45 sáng</strong> để tới trạm Westbay lúc <strong>08:30 – 08:40</strong>. Sau đó thong thả đi bộ 2 phút vào Hill Top Cafe, nhận tài liệu, order ly cafe sáng trước khi lớp bắt đầu đúng <strong>09:00</strong>.</p>
+        <div id="acc-bus" class="accordion-content px-4 pb-4 space-y-3 text-xs sm:text-sm text-slate-300">
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+            <div class="text-emerald-400 font-integral text-xs font-bold">⏰ KHUYẾN NGHỊ THỜI GIAN KHỞI HÀNH:</div>
+            <p class="font-acta text-xs sm:text-sm text-slate-200 italic leading-relaxed">
+              Thời gian xe chạy từ nội thành sang Ecopark mất khoảng <strong>45 – 55 phút</strong>. Anh/chị nên bắt xe chuyến <strong>07:30 – 07:45 sáng</strong> để tới trạm Westbay lúc <strong>08:30 – 08:40</strong>. Sau đó thong thả đi bộ 2 phút vào Hill Top Cafe, nhận tài liệu, order ly cafe sáng trước khi lớp bắt đầu đúng <strong>09:00</strong>.
+            </p>
           </div>
           
-          <div class="space-y-2">
+          <div class="space-y-2 pt-1 font-body">
             <p>• <strong>Tuyến Xe Buýt Số 69:</strong> (Bác Cổ / Trần Khánh Dư &rarr; Thủy Nguyên &rarr; <strong>Westbay Ecopark</strong>). Tần suất 20-30 phút/chuyến. <em>Giá vé: 9.000đ/lượt</em>.</p>
             <p>• <strong>Tuyến Xe Buýt Số 47B:</strong> (Long Biên &rarr; Bát Tràng &rarr; <strong>Westbay Ecopark</strong>). <em>Giá vé: 9.000đ/lượt</em>.</p>
-            <p>• <strong>Hệ Thống Ecobus &amp; VinBus:</strong> Tra cứu lộ trình các tuyến xe buýt nội thành kết nối sang Ecopark qua App <em>EcoOne</em> (Tổng đài Ecobus: <a href="tel:1900555565" class="text-emerald-400 font-mono">1900 555 565</a>) hoặc ứng dụng <em>VinBus</em>.</p>
+            <p>• <strong>Hệ Thống Ecobus &amp; VinBus:</strong> Tra cứu lộ trình các tuyến xe buýt nội thành kết nối sang Ecopark qua App <em>EcoOne</em> (Tổng đài Ecobus: <a href="tel:1900555565" class="text-emerald-400 font-mono-code font-bold">1900 555 565</a>) hoặc ứng dụng <em>VinBus</em>.</p>
           </div>
         </div>
       </div>
@@ -504,54 +581,54 @@
         <button onclick="toggleAccordion('acc-cost')" class="w-full p-4 text-left flex items-center justify-between hover:bg-slate-800/40 transition">
           <div class="flex items-center gap-3">
             <span class="text-emerald-400 text-base"><i class="fa-solid fa-wallet"></i></span>
-            <span class="text-sm font-semibold text-white">3. Bảng Tổng Hợp Tất Cả Chi Phí Dự Kiến Minh Bạch</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-white">3. BẢNG TỔNG HỢP CHI PHÍ THAM KHẢO MINH BẠCH</span>
           </div>
           <i id="icon-acc-cost" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-cost" class="accordion-content px-4 pb-4 space-y-3 text-xs text-slate-300">
+        <div id="acc-cost" class="accordion-content px-4 pb-4 space-y-3 text-xs sm:text-sm text-slate-300 font-body">
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
               <thead>
-                <tr class="border-b border-slate-800 text-slate-400 font-mono">
-                  <th class="py-2 px-2">Hạng Mục</th>
-                  <th class="py-2 px-2">Mức Chi Phí Tham Khảo</th>
-                  <th class="py-2 px-2">Ghi Chú</th>
+                <tr class="border-b border-slate-800 text-slate-400 font-integral text-[11px]">
+                  <th class="py-2.5 px-2">HẠNG MỤC</th>
+                  <th class="py-2.5 px-2">MỨC CHI PHÍ DỰ KIẾN</th>
+                  <th class="py-2.5 px-2">GHI CHÚ CHI TIẾT</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-slate-800/60">
+              <tbody class="divide-y divide-slate-800/60 font-body">
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Ở ghép Homestay Westbay</td>
-                  <td class="py-2.5 px-2 font-mono text-emerald-400 font-bold">~220.000đ – 250.000đ / người / đêm</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Ở ghép Homestay Westbay</td>
+                  <td class="py-2.5 px-2 font-mono-code text-emerald-400 font-bold">~220.000đ – 250.000đ / người / đêm</td>
                   <td class="py-2.5 px-2 text-slate-400">Em Chi xếp phòng Nam/Nữ riêng</td>
                 </tr>
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Thuê riêng căn Studio / 1PN</td>
-                  <td class="py-2.5 px-2 font-mono text-slate-200">~650.000đ – 750.000đ / căn / đêm</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Thuê riêng căn Studio / 1PN</td>
+                  <td class="py-2.5 px-2 font-mono-code text-slate-200">~650.000đ – 750.000đ / căn / đêm</td>
                   <td class="py-2.5 px-2 text-slate-400">Trọn căn riêng tư đầy đủ bếp, máy giặt</td>
                 </tr>
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Thuê riêng căn 2PN lớn</td>
-                  <td class="py-2.5 px-2 font-mono text-slate-200">~950.000đ – 1.100.000đ / căn / đêm</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Thuê riêng căn 2PN lớn</td>
+                  <td class="py-2.5 px-2 font-mono-code text-slate-200">~950.000đ – 1.100.000đ / căn / đêm</td>
                   <td class="py-2.5 px-2 text-slate-400">Cho nhóm 3-4 bạn hoặc gia đình</td>
                 </tr>
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Bữa tối thân mật Thứ Bảy</td>
-                  <td class="py-2.5 px-2 font-mono text-amber-400 font-bold">~200.000đ – 250.000đ / người</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Bữa tối thân mật Thứ Bảy</td>
+                  <td class="py-2.5 px-2 font-mono-code text-amber-400 font-bold">~200.000đ – 250.000đ / người</td>
                   <td class="py-2.5 px-2 text-slate-400">Đồ ăn tươi ngon, có Thầy tham gia</td>
                 </tr>
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Cơm suất nóng hổi tại lớp</td>
-                  <td class="py-2.5 px-2 font-mono text-slate-200">~55.000đ – 65.000đ / suất</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Cơm suất nóng hổi tại lớp</td>
+                  <td class="py-2.5 px-2 font-mono-code text-slate-200">~55.000đ – 65.000đ / suất</td>
                   <td class="py-2.5 px-2 text-slate-400">Cơm niêu/cơm gà giao đúng 12h00</td>
                 </tr>
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Vé xe buýt sang Ecopark</td>
-                  <td class="py-2.5 px-2 font-mono text-slate-200">9.000đ / lượt</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Vé xe buýt sang Ecopark</td>
+                  <td class="py-2.5 px-2 font-mono-code text-slate-200">9.000đ / lượt</td>
                   <td class="py-2.5 px-2 text-slate-400">Tuyến 69 hoặc 47B</td>
                 </tr>
                 <tr>
-                  <td class="py-2.5 px-2 font-medium text-white">Vé xe Bus 2 tầng ngắm Hà Nội</td>
-                  <td class="py-2.5 px-2 font-mono text-slate-200">150.000đ (1 vòng) – 300.000đ (4h)</td>
+                  <td class="py-2.5 px-2 font-semibold text-white">Vé xe Bus 2 tầng ngắm Hà Nội</td>
+                  <td class="py-2.5 px-2 font-mono-code text-slate-200">150.000đ (1 vòng) – 300.000đ (4h)</td>
                   <td class="py-2.5 px-2 text-slate-400">Hop-on Hop-off ngắm 30 danh thắng</td>
                 </tr>
               </tbody>
@@ -565,16 +642,16 @@
         <button onclick="toggleAccordion('acc-tour')" class="w-full p-4 text-left flex items-center justify-between hover:bg-slate-800/40 transition">
           <div class="flex items-center gap-3">
             <span class="text-cyan-400 text-base"><i class="fa-solid fa-landmark"></i></span>
-            <span class="text-sm font-semibold text-white">4. Link Đặt Vé Xe Bus 2 Tầng &amp; 3 Điểm Tham Quan Ngày Hôm Sau</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-white">4. LINK ĐẶT VÉ BUS 2 TẦNG &amp; 3 ĐIỂM DU LỊCH NGÀY HÔM SAU</span>
           </div>
           <i id="icon-acc-tour" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-tour" class="accordion-content px-4 pb-4 space-y-3.5 text-xs text-slate-300">
-          <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 space-y-2">
+        <div id="acc-tour" class="accordion-content px-4 pb-4 space-y-3.5 text-xs sm:text-sm text-slate-300 font-body">
+          <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 space-y-2">
             <div class="font-bold text-white flex items-center justify-between">
-              <span>🚌 1. City Tour Xe Bus 2 Tầng Ngắm Phố Cổ &amp; Hồ Gươm</span>
-              <a href="https://hopon-hopoff.vn" target="_blank" class="px-2.5 py-1 rounded bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition">
-                Đặt Vé Hop-on Hop-off
+              <span class="font-integral text-xs text-cyan-300">🚌 1. CITY TOUR XE BUS 2 TẦNG NGẮM PHỐ CỔ &amp; HỒ GƯƠM</span>
+              <a href="https://hopon-hopoff.vn" target="_blank" class="px-3 py-1 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition font-body">
+                Đặt Vé Trực Tuyến
               </a>
             </div>
             <p>• <strong>Điểm đón chính:</strong> Nhà Hát Lớn Hà Nội (Số 1 Tràng Tiền) hoặc Quảng trường Đông Kinh Nghĩa Thục (Bờ Hồ Gươm).</p>
@@ -582,14 +659,14 @@
             <p>• <strong>Trải nghiệm:</strong> Ngắm 30 danh thắng từ tầng 2 nóc mở (Lăng Bác, Hoàng Thành, Văn Miếu, Hồ Tây...), thưởng thức cafe Trứng Giảng, Phở Bát Đàn, Kem Tràng Tiền.</p>
           </div>
 
-          <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1.5">
-            <div class="font-bold text-white">🏺 2. Làng Gốm Bát Tràng &amp; Bảo Tàng Gốm (Cách 2km - 5 Phút)</div>
+          <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1.5">
+            <div class="font-integral text-xs font-bold text-amber-300">🏺 2. LÀNG GỐM BÁT TRÀNG &amp; BẢO TÀNG GỐM (CÁCH 2KM - 5 PHÚT)</div>
             <p>• Nằm sát vách Ecopark, bắt Grab taxi chỉ mất 5 phút (~35.000đ).</p>
             <p>• Trải nghiệm tự tay vuốt nặn gốm và check-in <strong>Bảo tàng Gốm Bát Tràng</strong> (kiến trúc 7 vòng xoay đất nung khổng lồ – góc quay video cực kỳ viral).</p>
           </div>
 
-          <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1.5">
-            <div class="font-bold text-white">🎡 3. Mega Grand World Hà Nội - Venice Thu Nhỏ (Cách 10 Phút)</div>
+          <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1.5">
+            <div class="font-integral text-xs font-bold text-purple-300">🎡 3. MEGA GRAND WORLD HÀ NỘI - VENICE THU NHỎ (CÁCH 10 PHÚT)</div>
             <p>• Trải nghiệm chèo thuyền Gondola trên sông phong cách Ý, dạo phố rực rỡ sắc màu, check-in cầu Đông Tây và xem show thực cảnh triệu đô <em>The Grand Voyage</em>.</p>
             <p>• Di chuyển bằng taxi hoặc tuyến xe buýt điện VinBus nội khu Ecopark - Ocean Park 2.</p>
           </div>
@@ -601,11 +678,11 @@
         <button onclick="toggleAccordion('acc-food')" class="w-full p-4 text-left flex items-center justify-between hover:bg-slate-800/40 transition">
           <div class="flex items-center gap-3">
             <span class="text-rose-400 text-base"><i class="fa-solid fa-utensils"></i></span>
-            <span class="text-sm font-semibold text-white">5. Danh Sách Quán Ăn Ngon Quanh Sảnh Westbay &amp; Thủy Nguyên (Đi Bộ 2-3 Phút)</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-white">5. QUÁN ĂN NGON QUANH SẢNH WESTBAY &amp; THỦY NGUYÊN (ĐI BỘ 2-3 PHÚT)</span>
           </div>
           <i id="icon-acc-food" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-food" class="accordion-content px-4 pb-4 space-y-2.5 text-xs text-slate-300">
+        <div id="acc-food" class="accordion-content px-4 pb-4 space-y-2.5 text-xs sm:text-sm text-slate-300 font-body">
           <p>• <strong>Bún Dọc Mùng Sườn Mọc:</strong> Số 6 Thủy Nguyên - Dãy A (Nước dùng thanh ngọt, đậm đà ~40k - 50k).</p>
           <p>• <strong>Bánh Cuốn Nóng Ruốc Tôm &amp; Cao Bằng:</strong> Số 54 &amp; Số 7 Thủy Nguyên (Tráng bánh nóng hổi thơm nức ~35k - 45k).</p>
           <p>• <strong>Phở Bò Truyền Thống / Phở Gà Đen:</strong> Chân đế Westbay C &amp; Tòa Swanlake R2 (~45k - 55k).</p>
@@ -620,23 +697,23 @@
         <button onclick="toggleAccordion('acc-photo')" class="w-full p-4 text-left flex items-center justify-between hover:bg-slate-800/40 transition">
           <div class="flex items-center gap-3">
             <span class="text-purple-400 text-base"><i class="fa-solid fa-images"></i></span>
-            <span class="text-sm font-semibold text-white">6. Không Gian Lớp Học Hill Top &amp; Căn Hộ Homestay Westbay</span>
+            <span class="font-integral text-xs sm:text-sm font-bold text-white">6. KHÔNG GIAN LỚP HỌC HILL TOP &amp; CĂN HỘ HOMESTAY WESTBAY</span>
           </div>
           <i id="icon-acc-photo" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
         </button>
-        <div id="acc-photo" class="accordion-content px-4 pb-4 space-y-3 text-xs text-slate-300">
+        <div id="acc-photo" class="accordion-content px-4 pb-4 space-y-3 text-xs sm:text-sm text-slate-300 font-body">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="space-y-1.5">
               <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900 aspect-video flex items-center justify-center">
                 <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Không gian học tập" class="w-full h-full object-cover">
               </div>
-              <p class="text-center text-slate-400 text-[11px]">Không gian tầng 2 nhà kính Hill Top Cafe</p>
+              <p class="text-center text-slate-400 text-[11px] font-acta italic">Không gian tầng 2 nhà kính Hill Top Cafe</p>
             </div>
             <div class="space-y-1.5">
               <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900 aspect-video flex items-center justify-center">
                 <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Căn hộ Homestay Westbay" class="w-full h-full object-cover">
               </div>
-              <p class="text-center text-slate-400 text-[11px]">Căn hộ Homestay Westbay thực tế tiện nghi</p>
+              <p class="text-center text-slate-400 text-[11px] font-acta italic">Căn hộ Homestay Westbay thực tế tiện nghi</p>
             </div>
           </div>
         </div>
@@ -647,10 +724,10 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 mt-10">
+  <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 mt-10 font-body">
     <div class="max-w-4xl mx-auto px-4 space-y-1.5">
-      <p>© 2026 Lớp Offline Thực Chiến Quay Dựng Video Marketing • Thầy Nguyễn Đức Việt</p>
-      <p>Hỗ trợ hậu cần &amp; xếp phòng: Em Chi (<a href="tel:0977455794" class="text-emerald-400 hover:underline">097 745 5794</a>) • Ecopark Hưng Yên</p>
+      <p class="font-integral text-[11px] text-slate-400">© 2026 LỚP OFFLINE QUAY DỰNG VIDEO MARKETING • THẦY NGUYỄN ĐỨC VIỆT</p>
+      <p class="font-body text-slate-500">Hỗ trợ hậu cần &amp; xếp phòng: Em Chi (<a href="tel:0977455794" class="text-emerald-400 hover:underline font-mono-code font-bold">097 745 5794</a>) • Ecopark Hưng Yên</p>
     </div>
   </footer>
 
