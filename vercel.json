@@ -1,17 +1,22 @@
 {
   "version": 2,
-  "rewrites": [
+  "cleanUrls": true,
+  "routes": [
     {
-      "source": "/api/submit",
-      "destination": "/api/submit.js"
+      "src": "/api/submit",
+      "dest": "/api/submit.js"
     },
     {
-      "source": "/api/health",
-      "destination": "/api/health.js"
+      "src": "/api/health",
+      "dest": "/api/health.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/fonts/(.*)",
+      "dest": "/fonts/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
