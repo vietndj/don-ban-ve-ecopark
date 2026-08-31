@@ -976,65 +976,34 @@
           <div id="tab-econuong" class="space-y-4">
             
             <!-- HEADER QUÁN & ĐẶC QUYỀN -->
-            <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
-              <div class="space-y-1">
-                <div class="flex items-center gap-2">
-                  <span class="font-integral text-xs sm:text-sm font-bold text-emerald-950">CAFE ECO &amp; NƯỚNG • HỒ THIÊN NGA</span>
-                  <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-700 font-mono-code font-bold text-[11px]">Deal riêng của Em Chi</span>
+            <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200 space-y-3 shadow-sm">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="font-integral text-xs sm:text-sm font-bold text-emerald-950">CAFE ECO &amp; NƯỚNG • HỒ THIÊN NGA</span>
+                    <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-700 font-mono-code font-bold text-[11px]">Deal riêng của Em Chi</span>
+                  </div>
+                  <p class="text-xs text-slate-600">
+                    📍 <strong>Địa chỉ:</strong> Cổng Số 2 công viên Hồ Thiên Nga, Ecopark • 📞 Hotline: <a href="tel:0778418886" class="text-emerald-700 font-mono-code font-bold">077.841.8886</a>
+                  </p>
                 </div>
-                <p class="text-xs text-slate-600">
-                  📍 <strong>Địa chỉ:</strong> Cổng Số 2 công viên Hồ Thiên Nga, Ecopark • 📞 Hotline: <a href="tel:0778418886" class="text-emerald-700 font-mono-code font-bold">077.841.8886</a>
-                </p>
-                <p class="text-xs text-emerald-900 font-semibold italic">
-                  ✨ <strong>Ưu đãi độc quyền:</strong> Giảm ngay <span class="text-rose-600 font-bold">20% tổng hóa đơn</span> cho đoàn lớp học từ 15 người trở lên!
-                </p>
               </div>
-              <div class="flex-shrink-0">
-                <button type="button" onclick="openMenuImage('/images/menu/eco-nuong-menu-full.jpg', 'Menu Quán Eco & Nướng')" class="px-3.5 py-2 rounded-xl bg-white border border-emerald-300 text-emerald-800 text-xs font-bold hover:bg-emerald-50 transition shadow-sm flex items-center gap-1.5 cursor-pointer">
-                  <i class="fa-solid fa-image"></i> Xem Ảnh Menu Gốc
+
+              <p class="text-xs text-emerald-900 font-semibold italic">
+                ✨ <strong>Ưu đãi độc quyền:</strong> Giảm ngay <span class="text-rose-600 font-bold">20% tổng hóa đơn</span> cho đoàn lớp học từ 15 người trở lên (Bao gồm đầy đủ các set Combo nướng Bò Mỹ, Hải sản tươi, Thịt heo má đào &amp; Đồ uống).
+              </p>
+
+              <!-- CÁC NÚT XEM ẢNH MENU GỐC -->
+              <div class="pt-1 flex flex-wrap gap-2.5">
+                <button type="button" onclick="openMenuImage('/images/menu/eco-nuong-menu-full.jpg', 'Menu Chi Tiết Quán Eco & Nướng')" class="px-4 py-2.5 rounded-xl bg-white border border-emerald-300 text-emerald-900 text-xs font-bold hover:bg-emerald-100 transition shadow-sm flex items-center gap-2 cursor-pointer">
+                  <i class="fa-solid fa-image text-emerald-700"></i>
+                  <span>Xem Ảnh Bảng Giá Món Nướng &amp; Đồ Uống</span>
+                </button>
+                <button type="button" onclick="openMenuImage('/images/menu/eco-nuong-combo.jpg', 'Menu Set Combo Eco & Nướng')" class="px-4 py-2.5 rounded-xl bg-white border border-emerald-300 text-emerald-900 text-xs font-bold hover:bg-emerald-100 transition shadow-sm flex items-center gap-2 cursor-pointer">
+                  <i class="fa-solid fa-fire text-amber-600"></i>
+                  <span>Xem Ảnh Các Set Combo Nướng</span>
                 </button>
               </div>
-            </div>
-
-            <!-- BẢNG MÓN GỌI THÊM & ĐỒ ĂN VẶT -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-              
-              <!-- CỘT 1: ĐỒ NƯỚNG GỌI THÊM -->
-              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
-                <div class="font-integral text-xs font-bold text-slate-900 flex items-center justify-between">
-                  <span>🥩 ĐĨA THỊT NƯỚNG &amp; HẢI SẢN GỌI THÊM</span>
-                  <span class="text-[10px] font-mono-code text-rose-600 font-semibold">(Chưa giảm 20%)</span>
-                </div>
-                <div class="space-y-1.5 divide-y divide-slate-200/60 font-body text-xs">
-                  <div class="flex justify-between pt-1"><span>Nạc vai heo / Ba chỉ heo</span><span class="font-mono-code font-bold text-slate-900">75k – 85k</span></div>
-                  <div class="flex justify-between pt-1"><span>Má đào heo thơm mềm</span><span class="font-mono-code font-bold text-slate-900">105k</span></div>
-                  <div class="flex justify-between pt-1"><span>Nấm heo giòn ngọt</span><span class="font-mono-code font-bold text-slate-900">135k</span></div>
-                  <div class="flex justify-between pt-1"><span>Bắp bò tươi / Ba chỉ bò Mỹ</span><span class="font-mono-code font-bold text-slate-900">145k</span></div>
-                  <div class="flex justify-between pt-1"><span>Dẻ sườn bò Mỹ / Vai bò Mỹ</span><span class="font-mono-code font-bold text-slate-900">155k</span></div>
-                  <div class="flex justify-between pt-1"><span>Tôm sú tươi nướng</span><span class="font-mono-code font-bold text-slate-900">115k</span></div>
-                  <div class="flex justify-between pt-1"><span>Mực trứng béo ngậy</span><span class="font-mono-code font-bold text-slate-900">165k</span></div>
-                  <div class="flex justify-between pt-1"><span>Rau nấm / Kim chi thêm</span><span class="font-mono-code font-bold text-slate-900">22k / đĩa</span></div>
-                  <div class="flex justify-between pt-1"><span>Nộm đu đủ bò khô</span><span class="font-mono-code font-bold text-slate-900">55k</span></div>
-                </div>
-              </div>
-
-              <!-- CỘT 2: ĐỒ ĂN VẶT & NƯỚC UỐNG HEALTHY -->
-              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
-                <div class="font-integral text-xs font-bold text-slate-900">
-                  🍟 ĐỒ ĂN VẶT &amp; NƯỚC ÉP HEALTHY
-                </div>
-                <div class="space-y-1.5 divide-y divide-slate-200/60 font-body text-xs">
-                  <div class="flex justify-between pt-1"><span>Thịt xiên nướng / Xúc xích / Phomai que</span><span class="font-mono-code font-bold text-slate-900">15k / chiếc</span></div>
-                  <div class="flex justify-between pt-1"><span>Khoai chiên / Gà viên lắc phomai</span><span class="font-mono-code font-bold text-slate-900">30k – 35k</span></div>
-                  <div class="flex justify-between pt-1"><span>Cánh gà rán / Đùi gà rán</span><span class="font-mono-code font-bold text-slate-900">35k</span></div>
-                  <div class="flex justify-between pt-1"><span>Nem chua rán Hà Nội (10 cái)</span><span class="font-mono-code font-bold text-slate-900">65k</span></div>
-                  <div class="flex justify-between pt-1"><span>Pizza Chicago phomai ngập tràn</span><span class="font-mono-code font-bold text-slate-900">85k – 105k</span></div>
-                  <div class="flex justify-between pt-1"><span>Nước ép Cam / Dưa hấu / Củ dền / Cần tây</span><span class="font-mono-code font-bold text-slate-900">40k</span></div>
-                  <div class="flex justify-between pt-1"><span>Bơ sữa dừa / Kem bơ / Dừa quả tươi</span><span class="font-mono-code font-bold text-slate-900">40k – 50k</span></div>
-                  <div class="flex justify-between pt-1"><span>Bia Sài Gòn / Tiger Bạc / Rượu quê hoa vàng</span><span class="font-mono-code font-bold text-slate-900">15k – 35k</span></div>
-                </div>
-              </div>
-
             </div>
 
           </div>
