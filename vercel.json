@@ -23,6 +23,14 @@
       "dest": "/public/$1"
     },
     {
+      "src": "/phong",
+      "dest": "/phong.html"
+    },
+    {
+      "src": "/phong.html",
+      "dest": "/phong.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
