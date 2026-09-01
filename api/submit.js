@@ -14,20 +14,15 @@ const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL || "form-feedback-of
 const GOOGLE_SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || "1KiRikBLzoZTin14c14-kZiZfXotp2JEZnYKWFcDtFhw";
 const GOOGLE_SHEET_NAME = process.env.GOOGLE_SHEET_NAME || "Danh Sách Học Viên";
 
-// GitHub Persistent Storage (Optional backup)
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
-const GITHUB_REPO = process.env.GITHUB_REPO || "vietndj/don-ban-ve-ecopark";
-const GITHUB_PATH = "data/submissions.json";
-
 // Google Sheets Client Singleton
 let _sheetsClient = null;
 function getGoogleSheetsClient() {
   if (_sheetsClient) return _sheetsClient;
-  if (!GOOGLE_CLIENT_EMAIL || !GOOGLE_PRIVATE_KEY) return null;
+  if (!GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY) return null;
   try {
     const auth = new google.auth.JWT({
       email: GOOGLE_CLIENT_EMAIL,
-      key: GOOGLE_PRIVATE_KEY,
+      key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
     _sheetsClient = google.sheets({ version: 'v4', auth });
@@ -52,10 +47,10 @@ async function appendToGoogleSheet(item) {
       item.fullName,                                  // Cột C: Họ Và Tên
       item.phone,                                     // Cột D: Số Điện Thoại / Zalo
       item.city || 'Chưa rõ',                         // Cột E: Tỉnh / Thành Phố
-      item.lodging || 'Tự túc chỗ ở',                 // Cột F: Nhu Cầu Lưu Trú
-      item.checkinTime || 'Chưa chọn',                // Cột G: Thời Gian Nhận Phòng
-      item.dinner || 'Tự túc ăn tối',                 // Cột H: Bữa Tối Thân Mật (19/09)
-      item.lunch || 'Tự túc ăn trưa',                 // Cột I: Đăng Ký Ăn Trưa Tại Lớp
+      item.lodging || 'Đã tự đặt Homestay Westbay',   // Cột F: Nhu Cầu Lưu Trú
+      item.checkinTime || 'Sáng Thứ Bảy (19/09)',     // Cột G: Thời Gian Đến / Check-in
+      item.dinner || 'Có tham gia cùng lớp',          // Cột H: Bữa Tối Thân Mật (19/09)
+      item.lunch || 'Đặt cơm suất tại lớp',           // Cột I: Đăng Ký Ăn Trưa Tại Lớp
       item.tourPlan || 'Không tham quan',             // Cột J: Tham Quan Ngày 21/09
       item.notes || 'Không có ghi chú',               // Cột K: Ghi Chú & Lời Nhắn
       'Chờ liên hệ'                                   // Cột L: Trạng Thái Xử Lý
@@ -84,20 +79,20 @@ async function dispatchToTelegram(item) {
     const excelDownloadUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/export?format=xlsx`;
     
     const text =
-      `🏡 <b>HỌC VIÊN ĐĂNG KÝ VỀ ECOPARK (19-20/09)!</b>\n` +
+      `🏡 <b>HỌC VIÊN XÁC NHẬN LỊCH TRÌNH ECOPARK (19-20/09)!</b>\n` +
       `━━━━━━━━━━━━━━━━━━━━\n` +
       `👤 <b>Họ và tên:</b> <b>${item.fullName || 'Chưa nhập'}</b>\n` +
       `📞 <b>Zalo / SĐT:</b> <a href="https://zalo.me/${item.phone}"><b>${item.phone || 'Chưa để SĐT'}</b></a>\n` +
       `📍 <b>Xuất phát từ:</b> <b>${item.city || 'Chưa rõ'}</b>\n\n` +
-      `🏠 <b>Chỗ ở:</b> <code>${item.lodging || 'Tự túc'}</code>\n` +
-      `⏰ <b>Check-in:</b> ${item.checkinTime || 'Chưa chọn'}\n` +
+      `🏠 <b>Lưu trú:</b> <code>${item.lodging || 'Tự túc'}</code>\n` +
+      `⏰ <b>Giờ đến dự kiến:</b> ${item.checkinTime || 'Chưa chọn'}\n` +
       `🍖 <b>Bữa tối thân mật (19/09):</b> ${item.dinner || 'Tự túc'}\n` +
       `🍱 <b>Ăn trưa tại lớp:</b> ${item.lunch || 'Tự do'}\n` +
       `☕ <b>Tham quan / Cafe:</b> ${item.tourPlan || 'Không'}\n` +
       (item.notes ? `\n💬 <b>Ghi chú riêng:</b>\n<i>"${item.notes}"</i>\n` : '') +
       `━━━━━━━━━━━━━━━━━━━━\n` +
       `📊 <a href="${sheetUrl}"><b>Mở Google Sheet Quản Lý</b></a> | <a href="${excelDownloadUrl}"><b>📥 Tải File Excel (.xlsx)</b></a>\n` +
-      `👩‍💼 <i>Em Chi liên hệ Zalo xác nhận mã phòng sớm nhé!</i>\n` +
+      `👩‍💼 <i>Em Chi liên hệ Zalo gửi cẩm nang và đón tiếp anh/chị nhé!</i>\n` +
       `⏰ <i>${item.submittedAt}</i>`;
 
     await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -128,7 +123,7 @@ module.exports = async (req, res) => {
     return res.status(200).json({
       success: true,
       status: 'healthy',
-      message: 'Hệ thống Đăng ký Ecopark đang hoạt động ổn định',
+      message: 'Hệ thống Xác nhận Lịch trình Ecopark đang hoạt động ổn định',
       googleSheetUrl: sheetUrl
     });
   }
@@ -145,11 +140,11 @@ module.exports = async (req, res) => {
         fullName: body.fullName || 'Ẩn danh',
         phone: body.phone || '',
         city: body.city || '',
-        lodging: body.lodging || 'Tự túc chỗ ở',
-        checkinTime: body.checkinTime || 'Sáng Thứ Bảy (19/09)',
-        dinner: body.dinner || 'Có tham gia cùng lớp (~200k - 250k)',
-        lunch: body.lunch || 'Đặt cơm suất giao tận lớp (~55k - 65k)',
-        tourPlan: body.tourPlan || 'Trở về tỉnh / Có lịch trình riêng',
+        lodging: body.lodging || 'Đã tự đặt Homestay Westbay / Ecopark',
+        checkinTime: body.checkinTime || 'Sáng Thứ Bảy (19/09) - Trước 08h30',
+        dinner: body.dinner || 'Có tham gia tiệc nướng tại Eco & Nướng Hồ Thiên Nga (~180k - 220k / người)',
+        lunch: body.lunch || 'Đặt cơm suất giao tận lớp (~55k - 65k / suất)',
+        tourPlan: body.tourPlan || 'Xe Bus 2 Tầng ngắm Phố Cổ & Hồ Gươm (City Tour)',
         notes: body.notes || ''
       };
 
@@ -161,7 +156,7 @@ module.exports = async (req, res) => {
 
       return res.status(200).json({
         success: true,
-        message: 'Đăng ký thành công! Em Chi sẽ liên hệ gửi mã phòng và tài liệu qua Zalo cho anh/chị.',
+        message: 'Xác nhận thành công! Em Chi sẽ liên hệ gửi cẩm nang chỉ đường và tài liệu qua Zalo cho anh/chị.',
         data: newSub,
         googleSheetUrl: `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/edit`
       });

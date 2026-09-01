@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cẩm Nang Đón Bạn Về Lớp & Sắp Xếp Chỗ Ở, Ăn Uống • Lớp Offline Video Marketing Ecopark</title>
+  <title>Cẩm Nang Đón Bạn Về Lớp & Xác Nhận Lịch Trình • Lớp Offline Video Marketing Ecopark</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -93,7 +93,7 @@
       font-display: swap;
     }
 
-    /* ═══ 30NGAYVIRAL.FEDU.VN LIGHT THEME DESIGN SYSTEM ═══ */
+    /* ═══ LIGHT THEME DESIGN SYSTEM ═══ */
     :root {
       --cl-bg:                  #f8fafc;
       --cl-card:                #ffffff;
@@ -148,10 +148,32 @@
     }
     .zebra-block--tint {
       background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #e2e8f0;
     }
 
-    /* ─── CARDS & CALLOUTS ─── */
+    /* ─── CUSTOM RADIOS & CHECKBOXES ─── */
+    .custom-radio:checked + label {
+      border-color: #059669 !important;
+      background-color: #f0fdf4 !important;
+      box-shadow: 0 0 0 1.5px #059669;
+    }
+    .custom-radio:checked + label .radio-circle {
+      border-color: #059669;
+      background-color: #059669;
+      box-shadow: inset 0 0 0 3px #ffffff;
+    }
+
+    /* ─── ACCORDION STYLES ─── */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+    }
+    .accordion-content.open {
+      max-height: 2000px;
+      transition: max-height 0.45s cubic-bezier(0.9, 0, 0.8, 0.2);
+    }
+
     .cl-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -167,7 +189,7 @@
     }
 
     .cl-callout {
-      padding: 12px 16px;
+      padding: 14px 18px;
       border-radius: 0 12px 12px 0;
       font-size: 14.5px;
       line-height: 1.7;
@@ -184,20 +206,13 @@
       border-left: 3.5px solid #059669;
       color: #334155;
     }
-
-    /* ─── RADIO SELECTION CARDS ─── */
-    .custom-radio:checked + label {
-      border-color: #059669;
-      background-color: #f0fdf4;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
-    }
-    .custom-radio:checked + label .radio-circle {
-      border-color: #059669;
-      background-color: #059669;
-      box-shadow: inset 0 0 0 3px #ffffff;
+    .cl-callout--amber {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 4px solid #f59e0b;
+      color: #78350f;
     }
 
-    /* ─── CTA BUTTON ─── */
     .cl-btn-cta {
       background: linear-gradient(180deg, #10b981 0%, #059669 100%);
       color: #ffffff;
@@ -210,19 +225,6 @@
     .cl-btn-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
-    }
-    .cl-btn-cta:active {
-      transform: translateY(1px);
-    }
-
-    /* ─── ACCORDIONS ─── */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .accordion-content.open {
-      max-height: 2500px;
     }
 
     .cl-badge-mono {
@@ -241,24 +243,21 @@
 </head>
 <body class="selection:bg-emerald-100 selection:text-emerald-900 min-h-screen flex flex-col justify-between">
 
-  <!-- TOP HEADER (LIGHT THEME) -->
+  <!-- TOP HEADER -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3.5 px-4 sm:px-8 shadow-sm">
     <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md shadow-emerald-600/20">
-          <i class="fa-solid fa-video text-base"></i>
+        <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-integral font-bold text-sm shadow-md shadow-emerald-600/20 flex-shrink-0">
+          FEDU
         </div>
         <div>
-          <div class="font-integral text-sm sm:text-base text-slate-900 font-bold leading-tight">LỚP OFFLINE VIDEO MARKETING</div>
-          <p class="text-xs text-emerald-700 font-semibold font-mono-code mt-0.5">Ecopark • Thứ 7 &amp; CN (19 - 20/09/2026)</p>
+          <div class="font-integral text-sm sm:text-base text-slate-900 font-bold leading-tight">ĐÓN BẠN VỀ ECOPARK</div>
+          <p class="text-xs text-emerald-700 font-semibold font-mono-code mt-0.5">Lớp Offline Quay Dựng Video Marketing • 19-20/09</p>
         </div>
       </div>
       <div class="flex items-center gap-2">
         <a href="/phong.html" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition font-body">
-          <i class="fa-solid fa-hotel text-emerald-600"></i> Top Homestay &amp; Link Đặt
-        </a>
-        <a href="#thong-tin-phu" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition font-body">
-          <i class="fa-solid fa-compass text-emerald-600"></i> Cẩm Nang Đi Lại
+          <i class="fa-solid fa-hotel text-emerald-600"></i> Danh Sách Homestay
         </a>
         <a href="https://zalo.me/0977455794" target="_blank" class="px-4 py-2 text-xs font-bold rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white transition flex items-center gap-1.5 shadow-sm font-body">
           <i class="fa-solid fa-phone"></i> Em Chi: 097 745 5794
@@ -269,82 +268,98 @@
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-8 w-full">
 
-    <!-- HERO BANNER (LIGHT EDITORIAL WITH REGULAR HEADING) -->
+    <!-- HERO BANNER -->
     <div class="p-6 sm:p-9 cl-card-hero relative overflow-hidden">
       <div class="space-y-4 relative z-10">
-        <div class="cl-badge-mono bg-emerald-50 text-emerald-800 border border-emerald-200">
-          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-          Đón Tiếp Học Viên Về Ecopark
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="cl-badge-mono bg-emerald-50 text-emerald-800 border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            Lớp Offline Video Marketing K2
+          </div>
+          <span class="text-xs font-mono-code px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-bold">
+            19 - 20/09/2026
+          </span>
         </div>
         
-        <!-- TIÊU ĐỀ REGULAR NHẸ NHÀNG THANH THOÁT -->
-        <h2 class="font-integral text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 leading-[1.3] tracking-normal">
-          Cẩm Nang Đón Bạn Về Lớp &amp; Sắp Xếp Chỗ Ở, Ăn Uống
-        </h2>
+        <h1 class="font-integral text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-[1.3] tracking-tight">
+          Chào Mừng Anh/Chị Về Lớp Offline Tại Ecopark!
+        </h1>
         
         <div class="cl-callout cl-callout--success">
           <p class="font-acta text-base sm:text-lg text-emerald-950 leading-relaxed italic">
-            "Chào anh/chị, để chuyến đi về Ecopark tham gia lớp <strong>Quay Dựng Video Marketing</strong> diễn ra thuận tiện, thoải mái và trọn vẹn nhất, em đã chuẩn bị sẵn cẩm nang di chuyển, ăn uống và tham quan chi tiết ở bên dưới."
+            "Chào anh/chị! Em Chi phụ trách đón tiếp học viên. Trang web này cung cấp đầy đủ <strong>cẩm nang homestay, hướng dẫn đi lại, thực đơn ăn uống</strong> và <strong>phiếu xác nhận lịch trình</strong> để Ban Tổ Chức đón tiếp anh/chị chu đáo nhất trong 2 ngày học."
           </p>
         </div>
 
-        <p class="font-body text-sm sm:text-base text-slate-700 leading-relaxed">
-          Anh/chị vui lòng dành <strong>1 phút điền phiếu đăng ký</strong> để em sắp xếp chỗ nghỉ ngơi và các bữa ăn thật chu đáo cho anh/chị nhé!
-        </p>
-
-        <!-- HOTLINE PILLS -->
-        <div class="pt-2 flex flex-wrap gap-3 font-body">
-          <a href="tel:0977455794" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-emerald-200 text-xs sm:text-sm font-medium text-slate-800 hover:border-emerald-500 shadow-sm transition">
-            <i class="fa-solid fa-headset text-emerald-600 text-sm"></i>
-            <span>Hỗ trợ nhận phòng (Em Chi): <strong class="text-emerald-700 font-mono-code font-bold">097 745 5794</strong></span>
-          </a>
-          <a href="https://zalo.me/0934688632" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-medium text-slate-800 hover:border-slate-400 shadow-sm transition">
-            <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
-            <span>Zalo Thầy Nguyễn Đức Việt: <strong class="text-slate-900 font-mono-code font-bold">0934 688 632</strong></span>
-          </a>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 text-xs sm:text-sm font-body">
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
+            <span class="text-emerald-600 text-lg mt-0.5"><i class="fa-solid fa-hotel"></i></span>
+            <div>
+              <div class="font-bold text-slate-900">Homestay Sát Lớp (200m)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Tự đặt linh hoạt trên Agoda/Booking theo gu riêng</div>
+            </div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
+            <span class="text-rose-500 text-lg mt-0.5"><i class="fa-solid fa-fire-burner"></i></span>
+            <div>
+              <div class="font-bold text-slate-900">Tiệc Nướng Ven Hồ (Tối T7)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Deal riêng giảm 20% giao lưu cùng Thầy Việt</div>
+            </div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
+            <span class="text-amber-500 text-lg mt-0.5"><i class="fa-solid fa-bowl-food"></i></span>
+            <div>
+              <div class="font-bold text-slate-900">Cơm Trưa Nóng Hổi Tại Lớp</div>
+              <div class="text-xs text-slate-500 mt-0.5">Giao tận nơi tầng 2 mát lạnh, nghỉ ngơi tại chỗ</div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
-    <!-- MAIN REGISTRATION FORM (ZEBRA STRIPED BLOCKS) -->
-    <div class="cl-card shadow-sm overflow-hidden font-body">
+    <!-- FORM ĐĂNG KÝ HẬU CẦN -->
+    <div id="form-dang-ky" class="cl-card overflow-hidden">
       
-      <div class="p-6 sm:p-8 bg-white border-b border-slate-200 flex items-center gap-3.5">
-        <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-base">
+      <div class="p-6 sm:p-8 bg-slate-900 text-white space-y-2">
+        <div class="flex items-center gap-2 text-emerald-400 font-mono-code text-xs font-bold uppercase tracking-wider">
           <i class="fa-solid fa-clipboard-check"></i>
+          <span>PHIẾU XÁC NHẬN LỊCH TRÌNH THAM GIA LỚP</span>
         </div>
-        <div>
-          <h3 class="font-integral font-bold text-slate-900 text-lg sm:text-xl">PHIẾU ĐĂNG KÝ HẬU CẦN &amp; ĂN Ở</h3>
-          <p class="text-xs sm:text-sm text-slate-500 font-body mt-0.5">Điền nhanh gọn 1 phút • Em sẽ liên hệ qua Zalo gửi mã phòng</p>
-        </div>
+        <h2 class="font-integral text-lg sm:text-xl font-bold">
+          XÁC NHẬN THÔNG TIN ĐÓN TIẾP &amp; HẬU CẦN
+        </h2>
+        <p class="font-acta text-slate-300 text-xs sm:text-sm italic">
+          Anh/chị vui lòng điền thông tin bên dưới để Em Chi nắm lịch trình, chuẩn bị tài liệu và đón tiếp chu đáo nhất nhé.
+        </p>
       </div>
 
       <form id="bookingForm" onsubmit="handleSubmit(event)" class="divide-y divide-slate-200">
-
-        <!-- BLOCK 1: THÔNG TIN CÁ NHÂN (ZEBRA: WHITE) -->
+        
+        <!-- BLOCK 1: THÔNG TIN CƠ BẢN (ZEBRA: WHITE) -->
         <div class="p-6 sm:p-8 zebra-block--white space-y-4">
           <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">1</span>
-            <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
-              THÔNG TIN CÁ NHÂN CỦA ANH/CHỊ
-            </h4>
+            <h3 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+              THÔNG TIN LIÊN HỆ CỦA ANH/CHỊ
+            </h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Họ và tên của anh/chị <span class="text-rose-500">*</span></label>
-              <input type="text" id="fullName" required placeholder="Ví dụ: Nguyễn Văn Nam" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 font-body">Họ và tên <span class="text-rose-500">*</span></label>
+              <input type="text" id="fullName" required placeholder="Ví dụ: Nguyễn Văn Nam" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
             </div>
+
             <div>
-              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Số điện thoại / Zalo <span class="text-rose-500">*</span></label>
-              <input type="tel" id="phone" required placeholder="Ví dụ: 0988 123 456" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 font-body">Số Điện Thoại / Zalo <span class="text-rose-500">*</span></label>
+              <input type="tel" id="phone" required placeholder="Ví dụ: 0988 123 456" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
             </div>
+
             <div>
-              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Tỉnh / Thành phố xuất phát (Có gợi ý)</label>
-              <input type="text" id="city" list="provinceList" placeholder="Gõ để chọn tỉnh/thành..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
-              
-              <!-- DATALIST 63 TỈNH THÀNH VIỆT NAM TỰ ĐỘNG GỢI Ý -->
-              <datalist id="provinceList">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 font-body">Tỉnh / Thành Phố Xuất Phát <span class="text-rose-500">*</span></label>
+              <input type="text" id="city" list="provinces" required placeholder="Chọn hoặc nhập tỉnh/thành" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+              <datalist id="provinces">
                 <option value="Hà Nội">
                 <option value="TP. Hồ Chí Minh">
                 <option value="Đà Nẵng">
@@ -361,172 +376,139 @@
                 <option value="Thanh Hóa">
                 <option value="Nghệ An">
                 <option value="Hà Tĩnh">
-                <option value="Thừa Thiên Huế">
-                <option value="Quảng Nam">
-                <option value="Quảng Ngãi">
-                <option value="Bình Định">
-                <option value="Phú Yên">
-                <option value="Khánh Hòa (Nha Trang)">
-                <option value="Lâm Đồng (Đà Lạt)">
-                <option value="Đắk Lắk (Buôn Ma Thuột)">
-                <option value="Bình Dương">
-                <option value="Đồng Nai">
-                <option value="Bà Rịa - Vũng Tàu">
                 <option value="Vĩnh Phúc">
                 <option value="Phú Thọ">
                 <option value="Thái Nguyên">
                 <option value="Bắc Giang">
-                <option value="Lạng Sơn">
                 <option value="Lào Cai (Sa Pa)">
-                <option value="Yên Bái">
-                <option value="Hòa Bình">
-                <option value="Sơn La">
-                <option value="Điện Biên">
-                <option value="Lai Châu">
-                <option value="Hà Giang">
-                <option value="Cao Bằng">
-                <option value="Bắc Kạn">
-                <option value="Tuyên Quang">
-                <option value="Gia Lai">
-                <option value="Kon Tum">
-                <option value="Đắk Nông">
-                <option value="Bình Phước">
-                <option value="Tây Ninh">
-                <option value="Long An">
-                <option value="Tiền Giang">
-                <option value="Bến Tre">
-                <option value="Trà Vinh">
-                <option value="Vĩnh Long">
-                <option value="Đồng Tháp">
-                <option value="An Giang">
-                <option value="Kiên Giang (Phú Quốc)">
-                <option value="Hậu Giang">
-                <option value="Sóc Trăng">
-                <option value="Bạc Liêu">
-                <option value="Cà Mau">
-                <option value="Bình Thuận (Phan Thiết)">
-                <option value="Ninh Thuận">
-                <option value="Quảng Bình">
-                <option value="Quảng Trị">
+                <option value="Lâm Đồng (Đà Lạt)">
+                <option value="Khánh Hòa (Nha Trang)">
+                <option value="Bình Dương">
+                <option value="Đồng Nai">
               </datalist>
             </div>
           </div>
 
           <div class="cl-callout cl-callout--note font-acta text-xs sm:text-sm italic">
-            💡 <strong>Note tận tâm:</strong> Em sẽ nhắn tin gửi mã phòng, hướng dẫn nhận phòng và tài liệu học qua số Zalo này của anh/chị.
+            💡 <strong>Note tận tâm:</strong> Em sẽ nhắn tin gửi cẩm nang chỉ đường, tài liệu học và đón anh/chị qua số Zalo này.
           </div>
         </div>
 
-        <!-- BLOCK 2: NHU CẦU LƯU TRÚ (ZEBRA: TINT #F8FAFC) -->
+        <!-- BLOCK 2: TÌNH TRẠNG CHỖ Ở / LƯU TRÚ (ZEBRA: TINT #F8FAFC) -->
         <div class="p-6 sm:p-8 zebra-block--tint space-y-4">
           <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">2</span>
-            <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
-              NHU CẦU LƯU TRÚ (HOMESTAY WESTBAY ECOPARK)
-            </h4>
+            <h3 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+              TÌNH TRẠNG CHỖ Ở / LƯU TRÚ CỦA ANH/CHỊ
+            </h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1 font-body">
             <div>
-              <input type="radio" name="lodging" id="lodging_shared" value="Ở ghép cùng lớp (~220k - 250k / người / đêm)" class="hidden custom-radio" checked>
-              <label for="lodging_shared" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <input type="radio" name="lodging" id="lodging_booked" value="Đã tự đặt Homestay Westbay / Ecopark" class="hidden custom-radio" checked>
+              <label for="lodging_booked" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
-                  <div class="text-sm font-bold text-slate-900">Ở ghép cùng lớp (~220k - 250k / người / đêm)</div>
-                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Tiết kiệm, em chủ động ghép phòng chu đáo, tiện kết nối bạn bè</div>
+                  <div class="text-sm font-bold text-slate-900">Đã tự đặt Homestay Westbay / Ecopark</div>
+                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Đã có phòng nghỉ ngơi riêng tư sát lớp học (200m đi bộ ven hồ)</div>
                 </div>
               </label>
             </div>
 
             <div>
-              <input type="radio" name="lodging" id="lodging_studio" value="Thuê riêng căn Studio / 1PN (~650k - 750k / đêm)" class="hidden custom-radio">
-              <label for="lodging_studio" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <input type="radio" name="lodging" id="lodging_viewing" value="Đang xem danh sách Homestay để tự đặt" class="hidden custom-radio">
+              <label for="lodging_viewing" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
-                  <div class="text-sm font-bold text-slate-900">Thuê riêng căn Studio / 1PN (~650k - 750k / đêm)</div>
-                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Không gian riêng tư, nghỉ ngơi thoải mái hoặc đi cùng người thân</div>
+                  <div class="text-sm font-bold text-slate-900">Đang xem danh sách Homestay để tự đặt</div>
+                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Cần tham khảo các căn review cao và link đặt Agoda/Booking trực tiếp</div>
                 </div>
               </label>
             </div>
 
             <div>
-              <input type="radio" name="lodging" id="lodging_2pn" value="Thuê riêng căn 2PN (~950k - 1.100k / đêm)" class="hidden custom-radio">
-              <label for="lodging_2pn" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <input type="radio" name="lodging" id="lodging_home" value="Ở nhà riêng / Tự túc chỗ ở khác" class="hidden custom-radio">
+              <label for="lodging_home" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
-                  <div class="text-sm font-bold text-slate-900">Thuê riêng căn 2PN (~950k - 1.100k / đêm)</div>
-                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Phù hợp nhóm bạn thân 3-4 người hoặc gia đình đi cùng</div>
+                  <div class="text-sm font-bold text-slate-900">Ở nhà riêng / Tự túc chỗ ở khác</div>
+                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Lưu trú tại nhà riêng ở Hà Nội, Hưng Yên hoặc nhà người thân</div>
                 </div>
               </label>
             </div>
 
             <div>
-              <input type="radio" name="lodging" id="lodging_self" value="Tự túc chỗ ở / Đi về trong ngày" class="hidden custom-radio">
-              <label for="lodging_self" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <input type="radio" name="lodging" id="lodging_daily" value="Đi về trong ngày" class="hidden custom-radio">
+              <label for="lodging_daily" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
-                  <div class="text-sm font-bold text-slate-900">Tự túc chỗ ở / Đi về trong ngày</div>
-                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Em vẫn hỗ trợ gửi cẩm nang chỉ đường và bãi đỗ xe khi anh/chị đến</div>
+                  <div class="text-sm font-bold text-slate-900">Đi về trong ngày</div>
+                  <div class="text-xs text-slate-600 mt-1 leading-relaxed">Không lưu trú qua đêm, em vẫn gửi cẩm nang bãi đỗ xe khi anh/chị đến</div>
                 </div>
               </label>
             </div>
-          </div>
-
-          <div class="cl-callout cl-callout--note font-acta text-xs sm:text-sm italic">
-            💡 <strong>Note tận tâm:</strong> Khu căn hộ Homestay Westbay cách lớp học Hill Top chỉ 200m (3 phút đi bộ ven hồ). Nếu anh/chị chọn ở ghép, em sẽ sắp xếp phòng chu đáo, gửi hình ảnh căn hộ và mã nhận phòng qua Zalo trước ngày học.
           </div>
 
           <!-- BANNER LINK SANG TRANG PHONG.HTML -->
-          <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-body">
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-body">
             <div class="space-y-0.5">
               <div class="text-xs font-bold text-emerald-900 flex items-center gap-2">
-                <i class="fa-solid fa-building-user text-emerald-600"></i>
-                <span>Muốn tự chọn căn theo gu riêng hoặc tự đặt qua Agoda / Booking?</span>
+                <i class="fa-solid fa-hotel text-emerald-600"></i>
+                <span>Anh/chị chưa đặt phòng? Tham khảo ngay danh sách Homestay Westbay!</span>
               </div>
-              <p class="text-xs text-slate-600">Xem danh sách Top Homestay Westbay view đẹp, điểm review cao nhất và link đặt trực tiếp.</p>
+              <p class="text-xs text-slate-600">Top 4 căn hộ review cao nhất sát lớp học (200m đi bộ), kèm link đặt Agoda / Booking trực tiếp.</p>
             </div>
-            <a href="/phong.html" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-mono-code transition flex items-center justify-center gap-1.5 shadow-sm flex-shrink-0">
+            <a href="/phong.html" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-mono-code transition flex items-center justify-center gap-1.5 shadow-sm flex-shrink-0">
               <span>Xem Danh Sách Homestay</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
-        <!-- BLOCK 3: THỜI GIAN NHẬN PHÒNG (ZEBRA: WHITE) -->
+        <!-- BLOCK 3: DỰ KIẾN THỜI GIAN TỚI ECOPARK (ZEBRA: WHITE) -->
         <div class="p-6 sm:p-8 zebra-block--white space-y-4">
           <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">3</span>
-            <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
-              THỜI GIAN NHẬN PHÒNG (CHECK-IN DỰ KIẾN)
-            </h4>
+            <h3 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+              DỰ KIẾN THỜI GIAN TỚI ECOPARK
+            </h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1 font-body">
             <div>
-              <input type="radio" name="checkinTime" id="checkin_fri" value="Tối Thứ Sáu (18/09) - Đặt 2 đêm" class="hidden custom-radio">
+              <input type="radio" name="checkinTime" id="checkin_fri" value="Tối Thứ Sáu (18/09)" class="hidden custom-radio">
               <label for="checkin_fri" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
-                <span class="text-xs sm:text-sm font-bold text-slate-800">Tối T6 (18/09) • Đặt 2 đêm</span>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-800">Tối Thứ Sáu (18/09)</div>
+                  <div class="text-[11px] text-slate-500">Đến trước 1 đêm nghỉ ngơi</div>
+                </div>
               </label>
             </div>
             <div>
-              <input type="radio" name="checkinTime" id="checkin_sat" value="Sáng Thứ Bảy (19/09) - Đặt 1 đêm" class="hidden custom-radio" checked>
+              <input type="radio" name="checkinTime" id="checkin_sat" value="Sáng Thứ Bảy (19/09) - Trước 08h30" class="hidden custom-radio" checked>
               <label for="checkin_sat" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
-                <span class="text-xs sm:text-sm font-bold text-slate-800">Sáng T7 (19/09) • Đặt 1 đêm</span>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-800">Sáng Thứ Bảy (19/09)</div>
+                  <div class="text-[11px] text-slate-500">Đến trước 08h30 kịp giờ học</div>
+                </div>
               </label>
             </div>
             <div>
               <input type="radio" name="checkinTime" id="checkin_other" value="Khung giờ khác / Tự túc" class="hidden custom-radio">
               <label for="checkin_other" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
                 <div class="w-4 h-4 rounded-full border-2 border-slate-400 radio-circle flex-shrink-0"></div>
-                <span class="text-xs sm:text-sm font-bold text-slate-800">Khung giờ khác / Tự túc</span>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-800">Khung giờ khác / Tự túc</div>
+                  <div class="text-[11px] text-slate-500">Lịch trình di chuyển riêng</div>
+                </div>
               </label>
             </div>
           </div>
 
           <div class="cl-callout cl-callout--note font-acta text-xs sm:text-sm italic">
-            💡 <strong>Note tận tâm:</strong> Lớp học bắt đầu lúc 09:00 sáng Thứ Bảy. Nếu anh/chị ở xa đến từ tối Thứ Sáu, em sẽ hỗ trợ nhận phòng sớm để anh/chị nghỉ ngơi lấy lại năng lượng.
+            💡 <strong>Note tận tâm:</strong> Lớp học bắt đầu lúc 09:00 sáng Thứ Bảy. Anh/chị nên có mặt lúc 08:30 tại Hill Top Cafe để thong thả ăn sáng, uống cafe và nhận tài liệu trước khi vào lớp nhé.
           </div>
         </div>
 
@@ -535,17 +517,17 @@
           <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">4</span>
             <div class="flex flex-wrap items-center gap-2">
-              <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+              <h3 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
                 BỮA TỐI THÂN MẬT (TỐI THỨ BẢY 19/09 • 18H30)
-              </h4>
+              </h3>
               <span class="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-700 text-[11px] font-mono-code font-bold">GIẢM 20% ĐOÀN LỚP</span>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1 font-body">
             <div>
               <input type="radio" name="dinner" id="dinner_yes" value="Có tham gia tiệc nướng tại Eco & Nướng Hồ Thiên Nga (~180k - 220k / người)" class="hidden custom-radio" checked>
-              <label for="dinner_yes" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="dinner_yes" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -558,7 +540,7 @@
 
             <div>
               <input type="radio" name="dinner" id="dinner_no" value="Tự túc ăn tối" class="hidden custom-radio">
-              <label for="dinner_no" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="dinner_no" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Tự túc ăn tối</div>
@@ -583,15 +565,15 @@
         <div class="p-6 sm:p-8 zebra-block--white space-y-4">
           <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">5</span>
-            <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+            <h3 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               ĐĂNG KÝ ĂN TRƯA TẠI LỚP (NGÀY 1 &amp; NGÀY 2)
-            </h4>
+            </h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1 font-body">
             <div>
               <input type="radio" name="lunch" id="lunch_yes" value="Đặt cơm suất giao tận lớp (~55k - 65k / suất)" class="hidden custom-radio" checked>
-              <label for="lunch_yes" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lunch_yes" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Đặt cơm suất giao tận lớp (~55k - 65k / suất)</div>
@@ -602,7 +584,7 @@
 
             <div>
               <input type="radio" name="lunch" id="lunch_no" value="Tự do dùng bữa quanh khu ẩm thực Thủy Nguyên" class="hidden custom-radio">
-              <label for="lunch_no" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition">
+              <label for="lunch_no" class="p-4 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-start gap-3.5 transition h-full">
                 <div class="w-5 h-5 rounded-full border-2 border-slate-400 radio-circle mt-0.5 flex-shrink-0 transition"></div>
                 <div>
                   <div class="text-sm font-bold text-slate-900">Tự do dùng bữa quanh khu Thủy Nguyên</div>
@@ -623,12 +605,12 @@
         <div class="p-6 sm:p-8 zebra-block--tint space-y-4">
           <div class="flex items-center gap-2.5">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-mono-code font-bold text-xs flex items-center justify-center">6</span>
-            <h4 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
+            <h3 class="font-integral text-xs sm:text-sm font-bold uppercase text-slate-900 tracking-wider">
               KẾ HOẠCH THAM QUAN NGÀY HÔM SAU (THỨ HAI 21/09)
-            </h4>
+            </h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1 font-body">
             <div>
               <input type="radio" name="tourPlan" id="tour_bus2" value="Xe Bus 2 Tầng ngắm Phố Cổ & Hồ Gươm (City Tour)" class="hidden custom-radio" checked>
               <label for="tour_bus2" class="p-3.5 rounded-xl border border-slate-300 bg-white hover:border-slate-400 cursor-pointer flex items-center gap-3 transition">
@@ -675,14 +657,14 @@
               GHI CHÚ &amp; LỜI NHẮN RIÊNG GỬI EM
             </label>
           </div>
-          <textarea id="notes" rows="2" placeholder="Ví dụ: 'Mình ăn chay', 'Mình muốn ở cùng phòng với bạn Nam', 'Mình hạ cánh sân bay Nội Bài lúc 7h sáng cần hỗ trợ bắt xe'..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition"></textarea>
+          <textarea id="notes" rows="2" placeholder="Ví dụ: 'Mình ăn chay', 'Mình hạ cánh sân bay Nội Bài lúc 7h sáng cần hỗ trợ bắt xe'..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition"></textarea>
           <p class="font-acta text-xs sm:text-sm text-slate-500 italic">💡 <strong>Note:</strong> Anh/chị có thể ghi chú nếu có bất kỳ yêu cầu đặc biệt nào để em hỗ trợ chu đáo nhất.</p>
         </div>
 
         <!-- SUBMIT BUTTON AREA -->
         <div class="p-6 sm:p-8 bg-slate-50">
           <button type="submit" id="submitBtn" class="cl-btn-cta w-full py-4 px-6 rounded-2xl text-base sm:text-lg flex items-center justify-center gap-2.5 cursor-pointer">
-            <span>GỬI THÔNG TIN ĐĂNG KÝ CHO EM CHI</span>
+            <span>GỬI THÔNG TIN XÁC NHẬN CHO EM CHI</span>
             <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
@@ -696,12 +678,12 @@
         <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl">
           <i class="fa-solid fa-circle-check"></i>
         </div>
-        <h3 class="font-integral text-xl font-bold text-slate-900">ĐĂNG KÝ THÀNH CÔNG!</h3>
+        <h3 class="font-integral text-xl font-bold text-slate-900">XÁC NHẬN THÀNH CÔNG!</h3>
         <p class="font-acta text-base text-slate-700 leading-relaxed italic">
-          "Cảm ơn anh/chị! Em Chi đã nhận được thông tin và sẽ chủ động nhắn tin qua Zalo để gửi mã phòng, hướng dẫn nhận phòng và tài liệu học cho anh/chị sớm nhất nhé."
+          "Cảm ơn anh/chị! Em Chi đã nhận được thông tin lịch trình và sẽ chủ động nhắn tin qua Zalo để gửi cẩm nang chỉ đường, tài liệu học và đón anh/chị sớm nhất nhé."
         </p>
         <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-xs font-mono-code text-emerald-800">
-          Mã đăng ký: <span id="modalResponseId" class="font-bold text-emerald-900">ECO-2026-***</span>
+          Mã xác nhận: <span id="modalResponseId" class="font-bold text-emerald-900">ECO-2026-***</span>
         </div>
         <div class="pt-2 flex gap-3 font-body">
           <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition">
@@ -868,19 +850,14 @@
               </thead>
               <tbody class="divide-y divide-slate-100 font-body">
                 <tr class="hover:bg-slate-50/80 transition">
-                  <td class="py-3 px-3 font-semibold text-slate-900">Ở ghép Homestay Westbay</td>
-                  <td class="py-3 px-3 font-mono-code text-emerald-700 font-bold">~220.000đ – 250.000đ / người / đêm</td>
-                  <td class="py-3 px-3 text-slate-600">Em Chi xếp phòng Nam/Nữ riêng, cách lớp 200m</td>
-                </tr>
-                <tr class="hover:bg-slate-50/80 transition">
-                  <td class="py-3 px-3 font-semibold text-slate-900">Thuê riêng căn Studio / 1PN</td>
+                  <td class="py-3 px-3 font-semibold text-slate-900">Tự thuê Homestay Westbay (Studio / 1PN)</td>
                   <td class="py-3 px-3 font-mono-code text-slate-800">~650.000đ – 750.000đ / căn / đêm</td>
-                  <td class="py-3 px-3 text-slate-600">Trọn căn riêng tư đầy đủ bếp, máy giặt</td>
+                  <td class="py-3 px-3 text-slate-600">Trọn căn riêng tư đầy đủ bếp, máy giặt (cách lớp 200m)</td>
                 </tr>
                 <tr class="hover:bg-slate-50/80 transition">
-                  <td class="py-3 px-3 font-semibold text-slate-900">Thuê riêng căn 2PN lớn</td>
+                  <td class="py-3 px-3 font-semibold text-slate-900">Tự thuê Homestay Westbay (Căn 2PN lớn)</td>
                   <td class="py-3 px-3 font-mono-code text-slate-800">~950.000đ – 1.100.000đ / căn / đêm</td>
-                  <td class="py-3 px-3 text-slate-600">Cho nhóm 3-4 bạn hoặc gia đình</td>
+                  <td class="py-3 px-3 text-slate-600">Cho nhóm 3-4 bạn hoặc gia đình đi cùng</td>
                 </tr>
                 <tr class="hover:bg-slate-50/80 transition bg-emerald-50/40">
                   <td class="py-3 px-3 font-semibold text-slate-900">
@@ -951,7 +928,7 @@
             <p>• <strong>Trải nghiệm:</strong> Ngắm 30 danh thắng từ tầng 2 nóc mở (Lăng Bác, Hoàng Thành, Văn Miếu, Hồ Tây...), thưởng thức Phở Bát Đàn, Kem Tràng Tiền.</p>
           </div>
 
-          <!-- ĐIỂM 2: TOUR CAFE ECOPARK (THAY CHO BÁT TRÀNG) -->
+          <!-- ĐIỂM 2: TOUR CAFE ECOPARK -->
           <div class="p-4 bg-emerald-50/70 rounded-xl border border-emerald-200 space-y-2">
             <div class="font-integral text-xs font-bold text-emerald-900 flex items-center justify-between">
               <span>☕ 2. TOUR CAFE TRỨNG GIẢNG &amp; SỐNG ẢO VEN HỒ THIÊN NGA (NỘI KHU ECOPARK)</span>
@@ -1117,7 +1094,7 @@
   <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500 mt-12 font-body">
     <div class="max-w-4xl mx-auto px-4 space-y-2">
       <p class="font-integral text-xs text-slate-800 font-bold">© 2026 LỚP OFFLINE QUAY DỰNG VIDEO MARKETING • THẦY NGUYỄN ĐỨC VIỆT</p>
-      <p class="font-body text-slate-600">Hỗ trợ hậu cần &amp; xếp phòng: Em Chi (<a href="tel:0977455794" class="text-emerald-700 hover:underline font-mono-code font-bold">097 745 5794</a>) • Ecopark Hưng Yên</p>
+      <p class="font-body text-slate-600">Hỗ trợ hậu cần &amp; đón tiếp: Em Chi (<a href="tel:0977455794" class="text-emerald-700 hover:underline font-mono-code font-bold">097 745 5794</a>) • Ecopark Hưng Yên</p>
     </div>
   </footer>
 
@@ -1185,11 +1162,11 @@
         fullName: document.getElementById('fullName').value.trim(),
         phone: document.getElementById('phone').value.trim(),
         city: document.getElementById('city').value.trim(),
-        lodging: document.querySelector('input[name="lodging"]:checked')?.value || 'Tự túc chỗ ở',
-        checkinTime: document.querySelector('input[name="checkinTime"]:checked')?.value || 'Sáng Thứ Bảy (19/09)',
-        dinner: document.querySelector('input[name="dinner"]:checked')?.value || 'Có tham gia cùng lớp (~180k - 220k)',
-        lunch: document.querySelector('input[name="lunch"]:checked')?.value || 'Đặt cơm suất giao tận lớp (~55k - 65k)',
-        tourPlan: document.querySelector('input[name="tourPlan"]:checked')?.value || 'Trở về tỉnh / Có lịch trình riêng',
+        lodging: document.querySelector('input[name="lodging"]:checked')?.value || 'Đã tự đặt Homestay Westbay / Ecopark',
+        checkinTime: document.querySelector('input[name="checkinTime"]:checked')?.value || 'Sáng Thứ Bảy (19/09) - Trước 08h30',
+        dinner: document.querySelector('input[name="dinner"]:checked')?.value || 'Có tham gia tiệc nướng tại Eco & Nướng Hồ Thiên Nga (~180k - 220k / người)',
+        lunch: document.querySelector('input[name="lunch"]:checked')?.value || 'Đặt cơm suất giao tận lớp (~55k - 65k / suất)',
+        tourPlan: document.querySelector('input[name="tourPlan"]:checked')?.value || 'Xe Bus 2 Tầng ngắm Phố Cổ & Hồ Gươm (City Tour)',
         notes: document.getElementById('notes').value.trim()
       };
 
