@@ -1,38 +1,8 @@
 {
-  "version": 2,
   "cleanUrls": true,
-  "routes": [
-    {
-      "src": "/api/submit",
-      "dest": "/api/submit.js"
-    },
-    {
-      "src": "/api/health",
-      "dest": "/api/health.js"
-    },
-    {
-      "src": "/fonts/(.*)",
-      "dest": "/fonts/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/public/images/$1"
-    },
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/phong",
-      "dest": "/phong.html"
-    },
-    {
-      "src": "/phong.html",
-      "dest": "/phong.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/images/(.*)", "destination": "/public/images/$1" },
+    { "source": "/phong", "destination": "/phong.html" },
+    { "source": "/phong.html", "destination": "/phong.html" }
   ]
 }
