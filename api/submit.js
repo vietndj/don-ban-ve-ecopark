@@ -6,8 +6,8 @@ const https = require('https');
 const { google } = require('googleapis');
 
 // === CẤU HÌNH TELEGRAM BOT OFFLINE.FEDU.VN ===
-// Sử dụng bot offlineKhoaVideo_bot của offline.fedu.vn để gom toàn bộ thông báo về 1 đầu mối
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "7991600422:AAHNmZ9ixcQtf_pTVQewadrnYZ0apOEvxgk";
+// Đảm bảo LUÔN gửi vào bot của offline.fedu.vn (@offlineKhoaVideo_bot)
+const OFFLINE_BOT_TOKEN = "7991600422:AAHNmZ9ixcQtf_pTVQewadrnYZ0apOEvxgk";
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "2050406425";
 
 // Google Sheets API - Service Account
@@ -86,9 +86,13 @@ async function appendToGoogleSheet(item) {
 // Bắn thông báo về Telegram Bot của offline.fedu.vn (@offlineKhoaVideo_bot)
 // Với icon và format phân biệt rõ ràng: ĐÂY LÀ ĐƠN HẬU CẦN CỦA HỌC VIÊN ĐÃ CHỐT SALE
 async function dispatchToTelegram(item) {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN;
+  // Gom các bot token cần gửi: Luôn có bot của offline.fedu.vn
+  const tokens = Array.from(new Set([
+    OFFLINE_BOT_TOKEN,
+    process.env.TELEGRAM_BOT_TOKEN
+  ].filter(Boolean)));
   const chatId = process.env.TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID;
-  if (!botToken || !chatId) return;
+  if (tokens.length === 0 || !chatId) return;
 
   try {
     const cleanPhone = (item.phone || '').replace(/[^\d+]/g, '');
@@ -117,16 +121,20 @@ async function dispatchToTelegram(item) {
       `👩‍💼 <i>Em Chi liên hệ Zalo gửi tài liệu và cẩm nang đón tiếp anh/chị nhé!</i>\n` +
       `⏰ <i>${escapeHtml(item.submittedAt)}</i>`;
 
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: text,
-        parse_mode: 'HTML',
-        disable_web_page_preview: true
-      })
-    });
+    await Promise.allSettled(
+      tokens.map(token =>
+        fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: text,
+            parse_mode: 'HTML',
+            disable_web_page_preview: true
+          })
+        })
+      )
+    );
   } catch (e) {
     console.error('Telegram dispatch error:', e.message);
   }
