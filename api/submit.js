@@ -162,14 +162,33 @@ module.exports = async (req, res) => {
   if (req.method === 'POST') {
     try {
       const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+      const fullName = (body.fullName || '').trim();
+      const phone = (body.phone || '').trim();
+
+      // Kiểm tra hợp lệ dữ liệu cơ bản
+      if (!fullName || fullName.length < 2) {
+        return res.status(400).json({
+          success: false,
+          error: 'Vui lòng nhập họ và tên đầy đủ của anh/chị.'
+        });
+      }
+
+      const cleanDigits = phone.replace(/\D/g, '');
+      if (!phone || cleanDigits.length < 9 || cleanDigits.length > 11) {
+        return res.status(400).json({
+          success: false,
+          error: 'Số điện thoại không hợp lệ. Vui lòng nhập đúng số điện thoại để Em Chi liên hệ đón tiếp.'
+        });
+      }
+
       const count = Math.floor(Math.random() * 900) + 100;
       const responseId = `GREENHUB-${String(count).padStart(3, '0')}`;
 
       const newSub = {
         responseId,
         submittedAt: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }),
-        fullName: (body.fullName || 'Ẩn danh').trim(),
-        phone: (body.phone || '').trim(),
+        fullName,
+        phone,
         city: (body.city || '').trim(),
         lodging: body.lodging || 'Khách sạn gần Green Hub (400k – 500k/đêm)',
         checkinTime: body.checkinTime || 'Sáng Thứ Bảy - Trước 08h30',
