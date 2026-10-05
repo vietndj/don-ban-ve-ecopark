@@ -62,7 +62,6 @@ async function appendToGoogleSheet(item) {
       item.lodging || 'Khách sạn gần Green Hub',      // Cột F: Nhu Cầu Lưu Trú
       item.checkinTime || 'Sáng Thứ Bảy - Trước 08h30',// Cột G: Thời Gian Đến / Check-in
       item.dinner || 'Tham gia trà chiều giao lưu',  // Cột H: Bữa Tối Thân Mật (T7)
-      item.lunch || 'Buffet line trưa tại lớp',       // Cột I: Ăn Trưa Tại Lớp
       item.familyPlan || 'Đi một mình',               // Cột J: Kế Hoạch / Bé đi cùng
       item.notes || 'Không có ghi chú',               // Cột K: Ghi Chú & Lời Nhắn
       'Đã chốt - Chờ đón tiếp'                        // Cột L: Trạng Thái Xử Lý
@@ -110,15 +109,14 @@ async function dispatchToTelegram(item) {
       `🏠 <b>Lưu trú:</b> <code>${escapeHtml(item.lodging || 'Tự túc')}</code>\n` +
       `⏰ <b>Giờ đến dự kiến:</b> ${escapeHtml(item.checkinTime || 'Chưa chọn')}\n` +
       `☕ <b>Trà chiều & Bánh ngọt (Tối T7):</b> ${escapeHtml(item.dinner || 'Tự túc')}\n` +
-      `🥗 <b>Buffet line 2 ngày trưa:</b> ${escapeHtml(item.lunch || 'Tự do')}\n` +
       `👶 <b>Bé / Người đi cùng:</b> ${escapeHtml(item.familyPlan || 'Đi một mình')}\n` +
-      (item.notes ? `\n💬 <b>Ghi chú riêng gửi Em Chi:</b>\n<i>"${escapeHtml(item.notes)}"</i>\n` : '') +
+      (item.notes ? `\n💬 <b>Ghi chú riêng gửi Em Nhi:</b>\n<i>"${escapeHtml(item.notes)}"</i>\n` : '') +
       `━━━━━━━━━━━━━━━━━━━━\n` +
       `🌿 <b>Địa điểm học:</b> Green Hub - Không Gian Xanh Long Biên\n` +
       `📍 <b>Địa chỉ:</b> 38 TT1, Khu đô thị Quân đội Thạch Bàn, Long Biên, Hà Nội\n` +
       `🔗 <b>Fanpage:</b> <a href="https://www.facebook.com/greenhubkhonggianxanhlongbien/?locale=vi_VN">Không Gian Xanh Greenhub</a>\n` +
       `📊 <a href="${sheetUrl}"><b>Mở Google Sheet Quản Lý Hậu Cần</b></a>\n` +
-      `👩‍💼 <i>Em Chi liên hệ Zalo gửi tài liệu và cẩm nang đón tiếp anh/chị nhé!</i>\n` +
+      `👩‍💼 <i>Em Nhi liên hệ Zalo gửi tài liệu và cẩm nang đón tiếp anh/chị nhé!</i>\n` +
       `⏰ <i>${escapeHtml(item.submittedAt)}</i>`;
 
     await Promise.allSettled(
@@ -177,7 +175,7 @@ module.exports = async (req, res) => {
       if (!phone || cleanDigits.length < 9 || cleanDigits.length > 11) {
         return res.status(400).json({
           success: false,
-          error: 'Số điện thoại không hợp lệ. Vui lòng nhập đúng số điện thoại để Em Chi liên hệ đón tiếp.'
+          error: 'Số điện thoại không hợp lệ. Vui lòng nhập đúng số điện thoại để Em Nhi liên hệ đón tiếp.'
         });
       }
 
@@ -193,7 +191,6 @@ module.exports = async (req, res) => {
         lodging: body.lodging || 'Khách sạn gần Green Hub (400k – 500k/đêm)',
         checkinTime: body.checkinTime || 'Sáng Thứ Bảy - Trước 08h30',
         dinner: body.dinner || 'Có tham gia giao lưu trà chiều và bánh ngọt Thứ Bảy cùng lớp',
-        lunch: body.lunch || 'Buffet line tự chọn cả 2 bữa trưa tại Green Hub',
         familyPlan: body.familyPlan || 'Đi một mình',
         notes: (body.notes || '').trim()
       };
@@ -206,7 +203,7 @@ module.exports = async (req, res) => {
 
       return res.status(200).json({
         success: true,
-        message: 'Xác nhận thành công! Em Chi sẽ liên hệ gửi cẩm nang chỉ đường Green Hub và tài liệu qua Zalo cho anh/chị.',
+        message: 'Xác nhận thành công! Em Nhi sẽ liên hệ gửi cẩm nang chỉ đường Green Hub và tài liệu qua Zalo cho anh/chị.',
         data: newSub,
         googleSheetUrl: `https://docs.google.com/spreadsheets/d/${GOOGLE_SPREADSHEET_ID}/edit`
       });
