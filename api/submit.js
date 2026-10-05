@@ -61,7 +61,7 @@ async function appendToGoogleSheet(item) {
       item.city || 'Chưa rõ',                         // Cột E: Tỉnh / Thành Phố
       item.lodging || 'Khách sạn gần Green Hub',      // Cột F: Nhu Cầu Lưu Trú
       item.checkinTime || 'Sáng Thứ Bảy - Trước 08h30',// Cột G: Thời Gian Đến / Check-in
-      item.dinner || 'Có tham gia buffet nướng BBQ',  // Cột H: Bữa Tối Thân Mật (T7)
+      item.dinner || 'Tham gia trà chiều giao lưu',  // Cột H: Bữa Tối Thân Mật (T7)
       item.lunch || 'Buffet line trưa tại lớp',       // Cột I: Ăn Trưa Tại Lớp
       item.familyPlan || 'Đi một mình',               // Cột J: Kế Hoạch / Bé đi cùng
       item.notes || 'Không có ghi chú',               // Cột K: Ghi Chú & Lời Nhắn
@@ -109,7 +109,7 @@ async function dispatchToTelegram(item) {
       `📍 <b>Xuất phát từ:</b> <b>${escapeHtml(item.city || 'Chưa rõ')}</b>\n\n` +
       `🏠 <b>Lưu trú:</b> <code>${escapeHtml(item.lodging || 'Tự túc')}</code>\n` +
       `⏰ <b>Giờ đến dự kiến:</b> ${escapeHtml(item.checkinTime || 'Chưa chọn')}\n` +
-      `🥩 <b>Buffet nướng BBQ (Tối T7):</b> ${escapeHtml(item.dinner || 'Tự túc')}\n` +
+      `☕ <b>Trà chiều & Bánh ngọt (Tối T7):</b> ${escapeHtml(item.dinner || 'Tự túc')}\n` +
       `🥗 <b>Buffet line 2 ngày trưa:</b> ${escapeHtml(item.lunch || 'Tự do')}\n` +
       `👶 <b>Bé / Người đi cùng:</b> ${escapeHtml(item.familyPlan || 'Đi một mình')}\n` +
       (item.notes ? `\n💬 <b>Ghi chú riêng gửi Em Chi:</b>\n<i>"${escapeHtml(item.notes)}"</i>\n` : '') +
@@ -192,7 +192,7 @@ module.exports = async (req, res) => {
         city: (body.city || '').trim(),
         lodging: body.lodging || 'Khách sạn gần Green Hub (400k – 500k/đêm)',
         checkinTime: body.checkinTime || 'Sáng Thứ Bảy - Trước 08h30',
-        dinner: body.dinner || 'Có tham gia buffet nướng BBQ tối Thứ Bảy cùng lớp',
+        dinner: body.dinner || 'Có tham gia giao lưu trà chiều và bánh ngọt Thứ Bảy cùng lớp',
         lunch: body.lunch || 'Buffet line tự chọn cả 2 bữa trưa tại Green Hub',
         familyPlan: body.familyPlan || 'Đi một mình',
         notes: (body.notes || '').trim()
